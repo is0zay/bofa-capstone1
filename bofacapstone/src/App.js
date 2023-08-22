@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Survey from './components/Survey';
+import AuthDetails from './components/AuthDetails';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,8 @@ function App() {
           Learn React
         </a>
       </header>
+	  <Survey />
+	  <AuthDetails />
     </div>
   );
 }
