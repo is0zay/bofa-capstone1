@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Survey from './components/Survey';
-import AuthDetails from './components/AuthDetails';
+import SignUp from './components/SignUp';
+import LogIn from './components/LogIn';
 function App() {
   return (
     <div className="App">
@@ -20,7 +21,8 @@ function App() {
         </a>
       </header>
 	  <Survey />
-	  <AuthDetails />
+	  <SignUp />
+	  <LogIn />
     </div>
   );
 }

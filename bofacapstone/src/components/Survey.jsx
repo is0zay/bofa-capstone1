@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Survey.css';
 
 const Survey = () => {
   // State to store the user's responses
@@ -25,32 +26,33 @@ const Survey = () => {
   };
 
   return (
-    <div>
-      <h1>Complete this short survey</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <h3>Are you looking for ways to get involved, ways to get assistance, or general info?</h3>
-          <label>
-            <input
-              type="radio"
-              name="userPurpose"
-			  value="Get Involved"
-              checked={responses.userPurpose === 'Get Involved'}
-			  onChange={(e) => handleResponseChange('userPurpose', e.target.value)}
-            />
-            Get Involved
-          </label>
-		  <label>
-            <input
-              type="radio"
-              name="userPurpose"
-			  value="Get Assistance"
-              checked={responses.userPurpose === 'Get Assistance'}
-			  onChange={(e) => handleResponseChange('userPurpose', e.target.value)}
-            />
-            Get Assistance
-          </label>
-		  <label>
+    <div className="survey-container">
+      <div className="survey-form">
+        <h1>Complete this short survey</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <h3>Are you looking for ways to get involved, ways to get assistance, or general info?</h3>
+            <label>
+              <input
+                type="radio"
+                name="userPurpose"
+                value="Get Involved"
+                checked={responses.userPurpose === 'Get Involved'}
+                onChange={(e) => handleResponseChange('userPurpose', e.target.value)}
+              />
+              Get Involved
+            </label>
+			<label>
+				<input
+				type="radio"
+				name="userPurpose"
+				value="Get Assistance"
+				checked={responses.userPurpose === 'Get Assistance'}
+				onChange={(e) => handleResponseChange('userPurpose', e.target.value)}
+				/>
+			 Get Assistance
+			</label>
+			<label>
             <input
               type="radio"
               name="userPurpose"
@@ -59,19 +61,18 @@ const Survey = () => {
 			  onChange={(e) => handleResponseChange('userPurpose', e.target.value)}
             />
             Get General Information
-          </label>
-          {/* Repeat the above label and input elements with different values for other options */}
-        </div>
+          	</label>
+          </div>
 
-        <div>
-          <h3>What state are you located in?</h3>
-          {/* Repeat the label and input elements similar to the question above */}
-		  <label>
-		  <select 
-		  	name='userLocation' 
-		 	id='userLocation'
-			onChange={(e) => handleResponseChange('userLocation', e.target.value)}
-		  >
+          <div>
+            <h3>What state are you located in?</h3>
+            {/* Repeat the label and input elements similar to the question above */}
+            <label>
+              <select
+                name="userLocation"
+                id="userLocation"
+                onChange={(e) => handleResponseChange('userLocation', e.target.value)}
+              >
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
 				<option value="AZ">Arizona</option>
@@ -123,24 +124,24 @@ const Survey = () => {
 				<option value="WV">West Virginia</option>
 				<option value="WI">Wisconsin</option>
 				<option value="WY">Wyoming</option>
-		  </select>
-          </label>
-        </div>
+              </select>
+            </label>
+          </div>
 
-        <div>
-          <h3>Question 3: How easy was it to navigate our website/app?</h3>
-          {/* Repeat the label and input elements similar to the question above */}
-		  <label>
-            <input
-              type="radio"
-              name="easy"
-              checked={responses.userNavigate === 'yes'}
-			  value="yes"
-			  onChange={(e) => handleResponseChange('userNavigate', e.target.value)}
-            />
-            yes
-          </label>
-		  <label>
+          <div>
+            <h3>How easy was it to navigate our website/app?</h3>
+            {/* Repeat the label and input elements similar to the question above */}
+            <label>
+              <input
+                type="radio"
+                name="easy"
+                checked={responses.userNavigate === 'yes'}
+                value="yes"
+                onChange={(e) => handleResponseChange('userNavigate', e.target.value)}
+              />
+              yes
+            </label>
+			<label>
             <input
               type="radio"
               name="easy"
@@ -149,11 +150,12 @@ const Survey = () => {
 			  onChange={(e) => handleResponseChange('userNavigate', e.target.value)}
             />
             no
-          </label>
-        </div>
+          	</label>
+          </div>
 
-        <button type="submit">Submit</button>
-      </form>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };
