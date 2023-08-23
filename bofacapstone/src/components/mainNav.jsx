@@ -9,7 +9,7 @@ const MainNav = () => {
         <ul className="navList">
           <li className="navLogo">
             <Link to="/">
-              <img src="./boaLogo.png" alt="website logo" />
+              <img src="./nav/boaLogo.png" alt="website logo" />
             </Link>
           </li>
           <li className="navItem dropdown">
@@ -42,7 +42,7 @@ const MainNav = () => {
             </ul>
           </li>
           <li className="navItem dropdown">
-            <Link to="#" className="navLink">
+            <Link to="/newsletter" className="navLink">
               Newsletter
             </Link>
             <ul className="dropdown-menu">

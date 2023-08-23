@@ -6,6 +6,9 @@ import MainNav from "./components/mainNav";
 import MainFooter from "./components/mainFooter";
 import Home from "./pages/home";
 import UtilityFooter from "./components/utilityFooter";
+import AboutHistory from "./pages/aboutHistory";
+import Newsletter from "./pages/newsletter";
+import Contact from "./pages/contact";
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
         <MainNav />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about/history" element={<AboutHistory />} />
+          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
       <MainFooter />
