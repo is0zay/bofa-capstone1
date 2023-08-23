@@ -1,0 +1,27 @@
+.utilityFooter {
+  position: relative;
+}
+
+.topInfo {
+  font-weight: bolder;
+  font-size: 1.1rem;
+  margin: 1.5rem;
+}
+
+.media-icons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px; /* Add margin for spacing between text and icons */
+}
+
+.media-icons a {
+  display: inline-block;
+  margin-left: 10px; /* Add spacing between icons */
+  font-size: 24px; /* Increase icon size */
+  color: #333; /* Default color for icons */
+  transition: color 0.3s ease; /* Add smooth color transition on hover */
+}
+
+.media-icons a:hover {
+  color: #007bff; /* Change color on hover (e.g., blue for Facebook) */
+}
