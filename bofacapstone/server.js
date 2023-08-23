@@ -50,10 +50,11 @@ app.post('/signup', (req, res) => {
   });
 });
 
-// User login
+const secretKey = "YqIa7kUN8TM4Mg0lL0k6dBjFYstV12VT";
+
 app.post('/login', (req, res) => {
 	const { email, password } = req.body;
-  
+	console.log(req.body);
 	// Retrieve the user from the database
 	db.query('SELECT * FROM Users WHERE email = ?', email, (error, results) => {
 	  if (error || results.length === 0) {
@@ -65,48 +66,47 @@ app.post('/login', (req, res) => {
 			res.status(401).json({ error: 'Invalid credentials' });
 		  } else {
 			// Generate a JWT token for authentication
-			const token = jwt.sign({ userId: results[0].id }, process.env.SECRET_KEY);
+			const token = jwt.sign({ userId: results[0].id }, secretKey);
 			res.status(200).json({ message: 'Login successful', token });
 		  }
 		});
 	  }
 	});
   });
-  
 
 // Middleware to authenticate requests
 const authenticate = (req, res, next) => {
-	const token = req.headers.authorization;
-  
-	if (!token) {
-	  res.status(401).json({ error: 'Unauthorized' });
-	} else {
-	  jwt.verify(token, process.env.SECRET_KEY, (err, decodedToken) => {
-		if (err) {
-		  res.status(401).json({ error: 'Unauthorized' });
-		} else {
-		  req.userId = decodedToken.userId;
-		  next();
-		}
-	  });
-	}
-  };
+  const token = req.headers.authorization;
+
+  if (!token) {
+    res.status(401).json({ error: 'Unauthorized' });
+  } else {
+    jwt.verify(token.split(' ')[1], secretKey, (err, decodedToken) => {
+      if (err) {
+        res.status(401).json({ error: 'Unauthorized' });
+      } else {
+        req.userId = decodedToken.userId;
+        next();
+      }
+    });
+  }
+};
 
 // Submit survey response
 app.post('/api/survey', authenticate, (req, res) => {
-	const { userPurpose, userLocation, userNavigate } = req.body;
-	const userId = req.userId;
-  
-	// Store the survey response in the database
-	const survey = { user_id: userId, userPurpose, userLocation, userNavigate };
-	db.query('INSERT INTO surveys SET ?', survey, (error, results) => {
-	  if (error) {
-		res.status(400).json({ error: 'Failed to submit survey response' });
-	  } else {
-		res.status(201).json({ message: 'Survey response submitted successfully' });
-	  }
-	});
+  const { userPurpose, userLocation, userNavigate } = req.body;
+  const userId = req.userId;
+
+  // Store the survey response in the database
+  const survey = { user_id: userId, userPurpose, userLocation, userNavigate };
+  db.query('INSERT INTO surveys SET ?', survey, (error, results) => {
+    if (error) {
+      res.status(400).json({ error: 'Failed to submit survey response' });
+    } else {
+      res.status(201).json({ message: 'Survey response submitted successfully' });
+    }
   });
+});
 
 // Start the server
 app.listen(3003, () => {

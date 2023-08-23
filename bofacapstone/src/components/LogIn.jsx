@@ -18,7 +18,7 @@ const LogIn = () => {
       localStorage.setItem('token', token);
 	  console.log("good")
 
-	// Set the default Authorization header for future requests
+	  // Set the default Authorization header for future requests
 	 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
       
