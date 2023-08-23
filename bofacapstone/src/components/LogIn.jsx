@@ -16,11 +16,13 @@ const LogIn = () => {
 
       // Save the token to local storage or cookie
       localStorage.setItem('token', token);
-	  console.log("good")
+	  console.log("good");
+	  console.log(response.data);
 
 	  // Set the default Authorization header for future requests
 	 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
+	
       
       // Redirect or perform any necessary action
       // e.g., navigate to a dashboard page
