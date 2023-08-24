@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Survey.css';
 import axios from 'axios'; // Import Axios
+import { useHistory } from 'react-router-dom'; // Import useHistory
+
 
 
 const Survey = () => {
@@ -11,6 +13,10 @@ const Survey = () => {
     userInterest: '',
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const history = useHistory(); // Initialize useHistory
+
   // Function to handle changes in the responses
   const handleResponseChange = (question, value) => {
     setResponses((prevResponses) => ({
@@ -19,6 +25,8 @@ const Survey = () => {
     }));
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,9 +34,15 @@ const Survey = () => {
       // Send the responses to the server using Axios POST request
       await axios.post('http://localhost:3003/api/survey', responses);
 
+	  setIsSubmitted(true);
+
       // TODO: You can add additional logic here upon successful submission
 
       console.log('Survey response submitted successfully');
+
+	  setTimeout(() => {
+        history.push('/dashboard'); // Navigate to another page after 2 seconds
+      }, 2000); // 2 seconds delay
     } catch (error) {
       // Handle error if the request fails
       console.error('Failed to submit survey response', error);

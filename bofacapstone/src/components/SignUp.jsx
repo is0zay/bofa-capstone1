@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './SignUp.css';
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
+
   const [first_name, setFirstName] = useState('');
   const [last_name, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,6 +22,7 @@ const SignUp = () => {
       // Perform any necessary action after successful signup
       // e.g., display a success message or redirect to the login page
 	  console.log("successful registration")
+	  navigate("/login")
     } catch (error) {
       setError('Registration failed');
     }

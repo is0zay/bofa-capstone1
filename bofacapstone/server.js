@@ -110,6 +110,26 @@ app.post('/api/survey', authenticate, (req, res) => {
   });
 });
 
+// Check if the logged-in user has completed the survey
+app.get('/api/survey/completed', authenticate, (req, res) => {
+	const userId = req.userId;
+  
+	// Query the surveys table to check if the logged-in user has completed the survey
+	const query = 'SELECT COUNT(*) AS completed FROM surveys WHERE user_id = ?';
+  
+	db.query(query, [userId], (err, results) => {
+	  if (err) {
+		console.error('Failed to query the database', err);
+		res.status(500).json({ error: 'Failed to query the database' });
+		return;
+	  }
+  
+	  const completed = results[0].completed > 0;
+  
+	  res.json({ completed });
+	});
+  });
+
 app.get('/users/:userId', authenticate, (req, res) => {
 	const userId = req.params.userId;
   
