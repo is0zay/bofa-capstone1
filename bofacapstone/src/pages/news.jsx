@@ -5,7 +5,7 @@ const NewsArticles = () => {
 
   useEffect(() => {
     // This effect will mimic componentDidMount
-    fetch("http://localhost:5000/newsarticles")
+    fetch("http://localhost:6000/newsarticles")
       .then((response) => response.json())
       .then((data) => SetNewsArticles(data))
       .catch((error) => console.error("Error fetching products:", error));

@@ -26,14 +26,6 @@ function App() {
       </Router>
       <MainFooter />
       <UtilityFooter />
-=======
-import News from './pages/news';
-
-
-function App() {
-  return (
-    <div>
-     <News />
     </div>
   );
 }
