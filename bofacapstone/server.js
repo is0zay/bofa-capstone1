@@ -132,6 +132,7 @@ app.get('/api/survey/completed', authenticate, (req, res) => {
 
 app.get('/users/:userId', authenticate, (req, res) => {
 	const userId = req.params.userId;
+	console.log(userId);
   
 	// Fetch user-specific data from the Users table
 	db.query('SELECT * FROM Users WHERE id = ?', [userId], (error, results) => {
@@ -143,6 +144,42 @@ app.get('/users/:userId', authenticate, (req, res) => {
 	  }
 	});
   });
+
+  app.get('/getuserinfo', authenticate, (req, res) => {
+	const userId = req.userId;
+	console.log(userId);
+  
+	// Query the Users and surveys tables to get user information
+	const query = `SELECT Users.id, Users.first_name, Users.last_name, Users.email, Users.password, surveys.user_purpose, surveys.user_location, surveys.user_interest, surveys.submission_date FROM Users JOIN surveys ON Users.id = surveys.user_id WHERE user_id = ?`;
+  
+	db.query(query, [userId], (err, results) => {
+	  if (err) {
+		console.error('Failed to query the database', err);
+		res.status(500).json({ error: 'Failed to query the database' });
+		return;
+	  }
+  
+	  const user = results[0]; // Assuming there's only one user with the given ID
+  
+	  res.json(user);
+	});
+  });
+
+  app.get('/users-surveys', (req, res) => {
+	const query = `SELECT Users.id, Users.first_name, Users.last_name, Users.email, Users.password, surveys.user_purpose, surveys.user_location, surveys.user_interest, surveys.submission_date FROM Users JOIN surveys ON Users.id = surveys.user_id WHERE user_id = ?`;
+  
+	// Execute the SQL query
+	db.query(query, (error, results) => {
+	  if (error) {
+		console.error('Error executing the query:', error);
+		res.status(500).json({ error: 'An error occurred' });
+		return;
+	  }
+	  res.json(results);
+	});
+  });
+  
+  
 
 // Start the server
 app.listen(3003, () => {

@@ -18,10 +18,31 @@ import axios from "axios";
 
 // Create the Dashboard component
 const DashboardPage = () => {
+	const [user, setUser] = useState(null);
+	const [loading, setLoading] = useState(true);
+  
+	useEffect(() => {
+	  const fetchUserData = async () => {
+		try {
+		  const token = localStorage.getItem('token');
+		  const response = await axios.get('http://localhost:3003/getuserinfo', {
+			headers: { Authorization: `Bearer ${token}` },
+		  });
+		  const userData = response.data;
+		  setUser(userData);
+		  console.log(userData)
+		  setLoading(false);
+		} catch (error) {
+		  console.error('Failed to fetch user data', error);
+		}
+	  };
+  
+	  fetchUserData();
+	}, []);
+  
   return (
     <div>
-      <h1>Welcome to the Dashboard!</h1>
-      {/* Add your dashboard content here */}
+   
     </div>
   );
 };
