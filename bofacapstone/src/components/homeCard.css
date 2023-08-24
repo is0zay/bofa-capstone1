@@ -1,0 +1,75 @@
+.homeCardContainer {
+  width: 20rem;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+  transition: 0.5s;
+  animation: ease-in-out;
+  margin: 3rem;
+  border-radius: 1rem;
+}
+
+.homeCardContainer:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px 0px;
+}
+
+.cardImgContainer img {
+  overflow: hidden;
+  height: 200px;
+  margin-top: 1rem;
+}
+
+.cardContent {
+  margin: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cardTitle {
+  margin-bottom: 0.5rem;
+}
+
+.cardBtn {
+  display: flex;
+  justify-content: center;
+}
+.cardBtn button {
+  padding: 0.5rem;
+  transition: 0.2s;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: red;
+  font-weight: bold;
+}
+.cardBtn button:hover {
+  background: rgba(27, 156, 252, 0.1);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.planOptions {
+  display: flex;
+}
+
+.slidingAlbums {
+  margin: 1rem;
+}
+
+@media (max-width: 768px) {
+  .homeCardContainer {
+    display: none;
+  }
+
+  .slidingAlbums {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .homeCardContainer {
+    width: 15rem;
+    margin: 2rem;
+  }
+}
