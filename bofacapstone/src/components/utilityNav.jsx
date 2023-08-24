@@ -16,11 +16,11 @@ const UtilityNav = () => {
             <Link to="/">Job Creation</Link>
           </li>
           <li className="utilityNavItem">
-            <Link to="/">Survey</Link>
+            <Link to="/survey">Survey</Link>
           </li>
           <li className="utilityNavSideContainer">
             <ul className="utilitySideItems">
-              <Link to="/signup" className="utilityNavItem">Complete Our Survey</Link>
+              <Link to="/signup" className="utilityNavItem">Sign Up</Link>
               <li className="utility-vertical-line"></li>
               <Link to="/login" className="utilityNavItem">Sign In</Link>
             </ul>

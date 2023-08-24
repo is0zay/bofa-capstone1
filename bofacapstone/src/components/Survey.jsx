@@ -148,17 +148,17 @@ const Survey = () => {
                 checked={responses.userInterest === 'health'}
                 value="health"
                 onChange={(e) => handleResponseChange('userInterest', e.target.value)}
-              />
+              ></input>
               Health
             </label>
 			<label>
             <input
               type="radio"
               name="userInterest"
-              checked={responses.userNavigate === 'jobs'}
+              checked={responses.userInterest === 'jobs'}
 			  value="jobs"
 			  onChange={(e) => handleResponseChange('userInterest', e.target.value)}
-            />
+            ></input>
             Jobs
           	</label>
           </div>
