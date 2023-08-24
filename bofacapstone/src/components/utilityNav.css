@@ -32,6 +32,8 @@
 .utilityNavItem {
   margin: 0 15px;
   font-size: 14px;
+  text-decoration: none;
+  color: #fff;
 }
 
 .utilityNavItem a {

@@ -10,6 +10,10 @@ import UtilityFooter from "./components/utilityFooter";
 import AboutHistory from "./pages/aboutHistory";
 import Newsletter from "./pages/newsletter";
 import Contact from "./pages/contact";
+import Signedup from "./pages/Signedup";
+import LogInPage from "./pages/LogInPage";
+import Survey from "./components/Survey";
+
 
 function App() {
   return (
@@ -22,6 +26,9 @@ function App() {
           <Route path="/about/history" element={<AboutHistory />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/contact" element={<Contact />} />
+		  <Route path="/signup" element={<Signedup />} />
+		  <Route path="/login" element={<LogInPage />} />
+		  <Route path="/survey" element={<Survey />} />
         </Routes>
       </Router>
       <MainFooter />

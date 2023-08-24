@@ -20,9 +20,9 @@ const UtilityNav = () => {
           </li>
           <li className="utilityNavSideContainer">
             <ul className="utilitySideItems">
-              <li className="utilityNavItem">Complete Our Survey</li>
+              <Link to="/signup" className="utilityNavItem">Complete Our Survey</Link>
               <li className="utility-vertical-line"></li>
-              <li className="utilityNavItem">Sign In</li>
+              <Link to="/login" className="utilityNavItem">Sign In</Link>
             </ul>
           </li>
           <div className="utilityNavSpacer"></div>

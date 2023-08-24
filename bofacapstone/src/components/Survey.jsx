@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './Survey.css';
+import axios from 'axios'; // Import Axios
+
 
 const Survey = () => {
   // State to store the user's responses
   const [responses, setResponses] = useState({
     userPurpose: '',
     userLocation: '',
-    userNavigate: '',
+    userInterest: '',
   });
 
   // Function to handle changes in the responses
@@ -17,12 +19,20 @@ const Survey = () => {
     }));
   };
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // TODO: Send the responses to the server or perform necessary actions
-    console.log(responses);
+    try {
+      // Send the responses to the server using Axios POST request
+      await axios.post('http://localhost:3003/api/survey', responses);
+
+      // TODO: You can add additional logic here upon successful submission
+
+      console.log('Survey response submitted successfully');
+    } catch (error) {
+      // Handle error if the request fails
+      console.error('Failed to submit survey response', error);
+    }
   };
 
   return (
@@ -129,27 +139,27 @@ const Survey = () => {
           </div>
 
           <div>
-            <h3>How easy was it to navigate our website/app?</h3>
+            <h3>What is your area of interest?</h3>
             {/* Repeat the label and input elements similar to the question above */}
             <label>
               <input
                 type="radio"
-                name="easy"
-                checked={responses.userNavigate === 'yes'}
-                value="yes"
-                onChange={(e) => handleResponseChange('userNavigate', e.target.value)}
+                name="userInterest"
+                checked={responses.userInterest === 'health'}
+                value="health"
+                onChange={(e) => handleResponseChange('userInterest', e.target.value)}
               />
-              yes
+              Health
             </label>
 			<label>
             <input
               type="radio"
-              name="easy"
-              checked={responses.userNavigate === 'no'}
-			  value="no"
-			  onChange={(e) => handleResponseChange('userNavigate', e.target.value)}
+              name="userInterest"
+              checked={responses.userNavigate === 'jobs'}
+			  value="jobs"
+			  onChange={(e) => handleResponseChange('userInterest', e.target.value)}
             />
-            no
+            Jobs
           	</label>
           </div>
 

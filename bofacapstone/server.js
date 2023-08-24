@@ -74,6 +74,7 @@ app.post('/login', (req, res) => {
 	});
   });
 
+
 // Middleware to authenticate requests
 const authenticate = (req, res, next) => {
   const token = req.headers.authorization;
@@ -94,11 +95,12 @@ const authenticate = (req, res, next) => {
 
 // Submit survey response
 app.post('/api/survey', authenticate, (req, res) => {
-  const { userPurpose, userLocation, userNavigate } = req.body;
+  const { userPurpose, userLocation, userInterest } = req.body;
   const userId = req.userId;
 
   // Store the survey response in the database
-  const survey = { user_id: userId, userPurpose, userLocation, userNavigate };
+  const survey = { user_id: userId, user_purpose: userPurpose, user_location: userLocation, user_interest: userInterest };
+  console.log(survey);
   db.query('INSERT INTO surveys SET ?', survey, (error, results) => {
     if (error) {
       res.status(400).json({ error: 'Failed to submit survey response' });
@@ -107,6 +109,20 @@ app.post('/api/survey', authenticate, (req, res) => {
     }
   });
 });
+
+app.get('/users/:userId', authenticate, (req, res) => {
+	const userId = req.params.userId;
+  
+	// Fetch user-specific data from the Users table
+	db.query('SELECT * FROM Users WHERE id = ?', [userId], (error, results) => {
+	  if (error) {
+		res.status(500).json({ error: 'Failed to fetch user data' });
+	  } else {
+		const userData = results[0]; // Assuming there's only one user with the given ID
+		res.status(200).json(userData);
+	  }
+	});
+  });
 
 // Start the server
 app.listen(3003, () => {
