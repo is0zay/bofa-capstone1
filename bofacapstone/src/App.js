@@ -1,28 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-import Survey from './components/Survey';
-import SignUp from './components/SignUp';
-import LogIn from './components/LogIn';
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //importing to handle routing for the entire application
+import "./App.css";
+import Nav from "./components/utilityNav";
+import MainNav from "./components/mainNav";
+import MainFooter from "./components/mainFooter";
+import Home from "./pages/home";
+import UtilityFooter from "./components/utilityFooter";
+import AboutHistory from "./pages/aboutHistory";
+import Newsletter from "./pages/newsletter";
+import Contact from "./pages/contact";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-	  <Survey />
-	  <SignUp />
-	  <LogIn />
+      <Router>
+        <Nav />
+        <MainNav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about/history" element={<AboutHistory />} />
+          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+      <MainFooter />
+      <UtilityFooter />
     </div>
   );
 }
