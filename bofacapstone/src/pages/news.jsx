@@ -13,6 +13,25 @@ const NewsArticles = () => {
 
   return (
     <div>
+      <h1>Latest</h1>
+      <div className="latest_news">
+        {/* <img
+          src="https://newsroom.bankofamerica.com/content/dam/newsroom/images/banners/OFC002_jpg.jpg/_jcr_content/renditions/original"
+          alt="latest news cover"
+        /> */}
+        <h2>
+            BofA Surpasses $500 Million in Equity Investments to Support
+            Minority and Women Entrepreneurs
+        </h2>
+        <h3>
+          NEW YORK, NY – Bank of America today announced that it has committed
+          more than $500 million in equity investments to minority- and
+          women-led funds, more than doubling its initial $200 million
+          commitment.
+        </h3>
+        <h3><a href="https://newsroom.bankofamerica.com/content/newsroom/press-releases/2023/06/bofa-surpasses--500-million-in-equity-investments-to-support-min.html">READ FULL ARTICLE..</a></h3>
+        <h3>6/15/2023</h3>
+      </div>
       <h1>Archives</h1>
       <div className="news_articles">
         {NewsArticles.map((article) => (

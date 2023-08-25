@@ -1,3 +1,34 @@
+.latest_news {
+    background-image: url(https://business.bofa.com/etc.clientlibs/flagship/clientlibs/clientlib-site/resources/images/unity-tile-flagscape.png);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+.latest_news img {
+    width: 100%;
+    height: 30rem;
+    padding-bottom: 2rem;
+}
+
+.latest_news h2 {
+    color: white;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.latest_news a {
+    color: white;
+    text-decoration: none;
+}
+
+.latest_news a:hover {
+    text-decoration: underline;
+}
+
+.latest_news h3 {
+    color: white;
+    padding-bottom: 2rem;
+}
+
 .news_articles {
     display: flex;
     flex-wrap: wrap;
@@ -9,6 +40,7 @@
     height: 20rem;
     width: 24rem;
     background-image: url(https://business.bofa.com/etc.clientlibs/flagship/clientlibs/clientlib-site/resources/images/unity-tile-flagscape.png);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
 }
 
 .news_card img  {
@@ -22,9 +54,9 @@
 }
 
 .news_card a:hover {
-    color: red;
+    text-decoration: underline;
 }
 
 .news_card h4 {
-    color: #89d0ff;
+    color: white;
 }
