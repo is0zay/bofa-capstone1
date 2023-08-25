@@ -9,6 +9,8 @@ import UtilityFooter from "./components/utilityFooter";
 import AboutHistory from "./pages/aboutHistory";
 import Newsletter from "./pages/newsletter";
 import Contact from "./pages/contact";
+import About from "./pages/about";
+import AboutImportance from "./pages/aboutImportance";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         <MainNav />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/about/history" element={<AboutHistory />} />
+          <Route path="/about/importance" element={<AboutImportance />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

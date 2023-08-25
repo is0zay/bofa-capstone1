@@ -7,13 +7,14 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   height: 3rem;
   max-width: 100vw;
+  font-size: 1.1rem;
   margin: 0 auto;
   padding: 0 20px;
   position: static;
-
+  /* text-align: left; */
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -37,7 +38,7 @@
   color: #012169;
 }
 
-.searchIcon {
+.userIcon {
   height: 30px;
   width: 30px;
   cursor: pointer;
@@ -81,4 +82,43 @@
 .dropdown-menu a:hover {
   border-bottom-color: #012169;
   color: #012169;
+}
+
+@media (max-width: 768px) {
+  /* Media query for tablet and phone sizes */
+  .navList {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px; /* Adjust this value based on your header height */
+    left: -100%; /* Hide the menu initially */
+    width: 100%;
+    background-color: #fff;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .navList.active {
+    left: 0; /* Show the menu */
+  }
+
+  .navItem {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .navItem:last-child {
+    border-bottom: none;
+  }
+
+  .navLink {
+    font-size: 14px;
+    padding: 10px 20px;
+    margin: 0;
+    display: block;
+  }
+
+  .userIcon {
+    display: none; /* Hide the search icon */
+  }
 }

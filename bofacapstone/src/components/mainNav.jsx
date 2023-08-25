@@ -18,10 +18,10 @@ const MainNav = () => {
             </Link>
             <ul className="dropdown-menu">
               <li>
-                <Link to="/home/news">News</Link>
+                <Link to="/home/health">Health</Link>
               </li>
               <li>
-                <Link to="/home/events">Events</Link>
+                <Link to="/home/jobs">Jobs</Link>
               </li>
             </ul>
           </li>
@@ -34,10 +34,7 @@ const MainNav = () => {
                 <Link to="/about/history">History</Link>
               </li>
               <li>
-                <Link to="/about/team">Team</Link>
-              </li>
-              <li>
-                <Link to="/about/values">Values</Link>
+                <Link to="/about/importance">Importance</Link>
               </li>
             </ul>
           </li>
@@ -50,7 +47,7 @@ const MainNav = () => {
                 <Link to="/newsletter/latest">Latest</Link>
               </li>
               <li>
-                <Link to="/newsletter/archives">Archives</Link>
+                <Link to="/newsletter/articles">Articles</Link>
               </li>
             </ul>
           </li>
@@ -58,34 +55,30 @@ const MainNav = () => {
             <Link to="/contact" className="navLink">
               Contact
             </Link>
-            <ul className="dropdown-menu">
+            {/* <ul className="dropdown-menu">
               <li>
                 <Link to="/contact/general">General</Link>
               </li>
               <li>
                 <Link to="/contact/support">Support</Link>
               </li>
-            </ul>
+            </ul> */}
           </li>
           <li className="navItem dropdown">
             <Link to="/" className="navLink">
               Help
             </Link>
-            <ul className="dropdown-menu">
+            {/* <ul className="dropdown-menu">
               <li>
                 <Link to="/help/faq">FAQ</Link>
               </li>
               <li>
                 <Link to="/help/contact">Contact Support</Link>
               </li>
-            </ul>
+            </ul> */}
           </li>
-          <li className="searchIcon">
-            <img
-              src="./nav/searchIcon.png"
-              className="searchIcon"
-              alt="search icon"
-            />
+          <li className="userIcon">
+            <img src="./nav/user.png" className="userIcon" alt="search icon" />
           </li>
         </ul>
       </nav>
