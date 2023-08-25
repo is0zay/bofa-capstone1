@@ -48,11 +48,11 @@ const MainNav = () => {
             <ul className="dropdown-menu">
               <li>
                 {/* <Link to="#latest">Latest</Link> */}
-                <a href="#latest">Latest</a>
+                <a href="/newsletter/#latest">Latest</a>
               </li>
               <li>
                 {/* <Link to="#archives">Archives</Link> */}
-                <a href="#archives">Archives</a>
+                <a href="/newsletter/#articles">Archives</a>
               </li>
             </ul>
           </li>

@@ -1,5 +1,6 @@
 .latest_news {
-    background-image: url(https://business.bofa.com/etc.clientlibs/flagship/clientlibs/clientlib-site/resources/images/unity-tile-flagscape.png);
+    background-color: #c41230;
+    background-blend-mode: overlay;
     box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
 }
 

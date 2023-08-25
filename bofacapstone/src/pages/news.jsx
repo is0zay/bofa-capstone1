@@ -45,8 +45,8 @@ function scrolltToSection(sectionId) {
           <h3>6/15/2023</h3>
         </section>
       </div>
-      <div id="archives" onClick={() => scrolltToSection("archives")}>
-        <h1>Archives</h1>
+      <div id="articles" onClick={() => scrolltToSection("articles")}>
+        <h1>Articles</h1>
         <div className="news_articles">
           {NewsArticles.map((article) => (
             <div key={article.id} className="news_card">
