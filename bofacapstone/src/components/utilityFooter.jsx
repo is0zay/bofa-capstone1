@@ -47,6 +47,7 @@ const UtilityFooter = () => {
         vestibulum vulputate. Sed et feugiat odio, non viverra ligula. Fusce vel
         ante non odio faucibus pharetra. Nam volutpat eleifend elit.
       </p>
+
       <div className="media-icons">
         <a
           href="https://facebook.com"
