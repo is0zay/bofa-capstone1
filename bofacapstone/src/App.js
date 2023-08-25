@@ -14,6 +14,11 @@ import Contact from "./pages/contact";
 import Signedup from "./pages/Signedup";
 import LogInPage from "./pages/LogInPage";
 import axios from "axios";
+import GIJobs from "./components/GIJobs";
+import GAJobs from "./components/GAJobs";
+import GIHealth from "./components/GIHealth";
+import GAHealth from "./components/GAHealth";
+
 
 
 // Create the Dashboard component
@@ -30,7 +35,8 @@ const DashboardPage = () => {
 		  });
 		  const userData = response.data;
 		  setUser(userData);
-		  console.log(userData)
+		  console.log(userData);
+		  console.log(userData.user_interest)
 		  setLoading(false);
 		} catch (error) {
 		  console.error('Failed to fetch user data', error);
@@ -42,7 +48,18 @@ const DashboardPage = () => {
   
   return (
     <div>
-   
+		{loading ? (
+        <p>Loading...</p>
+      ) : user ? (
+        <div>
+          {user.user_interest === 'jobs' && user.user_purpose === 'Get Involved' && <GIJobs userData={user} />}
+          {user.user_interest === 'jobs' && user.user_purpose === 'Get Assistance' && <GAJobs userData={user} />}
+          {user.user_interest === 'health' && user.user_purpose === 'Get Involved' && <GIHealth userData={user} />}
+          {user.user_interest === 'health' && user.user_purpose === 'Get Assistance' && <GAHealth userData={user} />}
+        </div>
+      ) : (
+        <p>No user data available.</p>
+      )}
     </div>
   );
 };
