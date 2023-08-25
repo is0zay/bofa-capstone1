@@ -47,10 +47,12 @@ const MainNav = () => {
             </Link>
             <ul className="dropdown-menu">
               <li>
-                <Link to="/newsletter/latest">Latest</Link>
+                {/* <Link to="#latest">Latest</Link> */}
+                <a href="#latest">Latest</a>
               </li>
               <li>
-                <Link to="/newsletter/archives">Archives</Link>
+                {/* <Link to="#archives">Archives</Link> */}
+                <a href="#archives">Archives</a>
               </li>
             </ul>
           </li>
