@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./mainNav.css";
 
 const MainNav = () => {
+
   return (
     <div>
       <nav className="navbar">
@@ -47,12 +48,18 @@ const MainNav = () => {
             </Link>
             <ul className="dropdown-menu">
               <li>
-                {/* <Link to="#latest">Latest</Link> */}
-                <a href="/newsletter/#latest">Latest</a>
+                {/* <Link
+                  to="/newsletter#latest">
+                  Latest
+                </Link> */}
+                <a href="/newsletter#latest">Latest</a>
               </li>
               <li>
-                {/* <Link to="#archives">Archives</Link> */}
-                <a href="/newsletter/#articles">Archives</a>
+                {/* <Link
+                  to="/newsletter#articles">
+                  Articles
+                </Link> */}
+                <a href="/newsletter#articles">Articles</a>
               </li>
             </ul>
           </li>
