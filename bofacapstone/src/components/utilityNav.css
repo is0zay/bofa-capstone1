@@ -1,6 +1,7 @@
 .utilityNav {
   background-color: #ededed;
   color: #fff;
+  
 }
 
 .utilityNavContainer {
@@ -18,7 +19,6 @@
 .utilityNavSideContainer {
   background-color: #012169;
   margin-left: auto;
-  padding-right: 2rem;
 }
 
 .utilitySideItems {
@@ -30,8 +30,9 @@
 }
 
 .utilityNavItem {
-  margin: 0 15px;
+  /* margin: 0 15px; */
   font-size: 14px;
+  width: 5rem;
 }
 
 .utilityNavItem a {
