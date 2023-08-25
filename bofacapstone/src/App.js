@@ -10,6 +10,8 @@ import UtilityFooter from "./components/utilityFooter";
 import AboutHistory from "./pages/aboutHistory";
 import Newsletter from "./pages/newsletter";
 import Contact from "./pages/contact";
+import NewsletterArchives from "./pages/newsletterarchives";
+import NewsletterLatest from "./pages/newsletterlatest";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about/history" element={<AboutHistory />} />
           <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/newsletter/latest" element={<NewsletterLatest />} />
+          <Route path="/newsletter/archives" element={<NewsletterArchives />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
