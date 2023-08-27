@@ -46,7 +46,7 @@ app.get("/newsarticles", (req, res) => {
       res.setHeader("Content-Type", "application/json");
       res.json(results);
         }
-  });
+  })
 });
 
 // User registration
@@ -71,7 +71,11 @@ app.post('/signup', (req, res) => {
           }
         }
       );
->
+	}
+	})
+});
+
+
   
 const secretKey = process.env.SECRET_KEY;
 
