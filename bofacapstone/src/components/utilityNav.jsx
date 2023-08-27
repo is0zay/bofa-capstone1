@@ -16,12 +16,6 @@ const UtilityNav = () => {
 
             <Link to="/home/jobs">Job Creation</Link>
           </li>
-          <li className="utilityNavSideContainer">
-            <ul className="utilitySideItems">
-              <li className="utilityNavItem">Sign Up</li>
-
-            <Link to="/">Job Creation</Link>
-          </li>
           <li className="utilityNavItem">
             <Link to="/survey">Survey</Link>
           </li>
