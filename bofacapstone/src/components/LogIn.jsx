@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './LogIn.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LogIn = ({ onLoginSuccess }) => {
 	const navigate = useNavigate();
@@ -55,6 +55,7 @@ const LogIn = ({ onLoginSuccess }) => {
           </div>
           <button type="submit">Login</button>
         </form>
+		<Link to='/signup'>Don't have an account?</Link>
       </div>
     </div>
   );

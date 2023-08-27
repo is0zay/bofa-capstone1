@@ -73,7 +73,7 @@ const GAHealth = ({ userData }) => {
 								<Link to={resource.profileUrl} target="_blank">View More</Link>
 								</div>
 							</div>
-							</div>
+						</div>
 					</div>
 				))}
 				</div>

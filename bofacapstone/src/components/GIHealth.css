@@ -3,15 +3,28 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 25rem);
 }
-.homeCardContainer {
-	width: 22rem;
-	height: 30rem;
+.homeCardContainerGIHealth {
+	width: 24rem;
+	height: 33rem;
 	overflow: hidden;
 	box-shadow: 0px 0px 15px -5px;
 	transition: 0.5s;
 	animation: ease-in-out;
 	margin: 3rem;
 	border-radius: 1rem;
+	background-color: #c41230;
+  }
+
+  .homeCardContainerGIHealthBlue {
+	width: 24rem;
+	height: 33rem;
+	overflow: hidden;
+	box-shadow: 0px 0px 15px -5px;
+	transition: 0.5s;
+	animation: ease-in-out;
+	margin: 3rem;
+	border-radius: 1rem;
+	background-color: #012169;
   }
 
   .dasboard-blue-button {

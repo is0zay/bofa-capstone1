@@ -21,6 +21,7 @@ import GAHealth from "./components/GAHealth";
 
 
 
+
 // Create the Dashboard component
 const DashboardPage = () => {
 	const [user, setUser] = useState(null);
@@ -49,7 +50,7 @@ const DashboardPage = () => {
   return (
     <div>
 		{loading ? (
-        <p>Loading...</p>
+        <p>To access your dashboard, sign into your account</p>
       ) : user ? (
         <div>
           {user.user_interest === 'jobs' && user.user_purpose === 'Get Involved' && <GIJobs userData={user} />}
@@ -279,6 +280,7 @@ function App() {
 		  <Route path="/login" element={<LogInPage />} />
 		  <Route path="/survey" element={<Survey />} />
 		  <Route path="/dashboard" element={<DashboardPage />} />
+		  
 
         </Routes>
       </Router>
