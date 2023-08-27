@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./Engage.css"
+import { Helmet } from 'react-helmet';
+
 
 const EngagementDashboard = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -26,6 +28,21 @@ const EngagementDashboard = () => {
 
   return (
     <div>
+		<Helmet>
+			<style>
+			{`
+				.utilityNav {
+				display: none;
+				}
+				.navbar {
+				display: none;
+				}
+				.footer-content, .utilityFooter {
+				display: none;
+				}
+			`}
+			</style>
+      	</Helmet>
         
         <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
 		<Link to="#" class="brand">
