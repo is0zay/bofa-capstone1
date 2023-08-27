@@ -4,6 +4,7 @@ import Card from "../components/homeCard";
 import Divider from "../components/homeDivider";
 import BlueDivider from "../components/blueDivider";
 import Button from "../components/buttonLink";
+
 const Home = () => {
   return (
     <div>

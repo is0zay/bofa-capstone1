@@ -13,13 +13,17 @@ const UtilityNav = () => {
             <Link to="/home/health">Health</Link>
           </li>
           <li className="utilityNavItem">
+
             <Link to="/home/jobs">Job Creation</Link>
+          </li>
+          <li className="utilityNavItem">
+            <Link to="/survey">Survey</Link>
           </li>
           <li className="utilityNavSideContainer">
             <ul className="utilitySideItems">
-              <li className="utilityNavItem">Sign Up</li>
+              <Link to="/signup" className="utilityNavItem">Sign Up</Link>
               <li className="utility-vertical-line"></li>
-              <li className="utilityNavItem">Sign In</li>
+              <Link to="/login" className="utilityNavItem">Sign In</Link>
             </ul>
           </li>
           <div className="utilityNavSpacer"></div>

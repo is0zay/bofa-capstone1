@@ -1,16 +1,12 @@
-require('dotenv').config();
-
 const express = require('express');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
-const axios = require('axios');
+require('dotenv').config();
 
-const dbName = process.env.DATABASE_NAME;
-const host = process.env.DATABASE_HOST;
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
+const mysqlDatabase = process.env.CAPSTONE_SQL_DATABASE;
+const endpoint = process.env.ENDPOINT;
 
 const app = express();
 app.use(express.json());
@@ -18,10 +14,10 @@ app.use(cors());
 
 // Create MySQL connection
 const db = mysql.createConnection({
-  host: host,
-  user: dbUser,
-  password: dbPassword,
-  database: dbName,
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'bofa_capstone',
 });
 
 // Connect to MySQL
@@ -30,23 +26,6 @@ db.connect((err) => {
     throw err;
   }
   console.log('Connected to the database');
-});
-
-app.get("/", (req, res) => {
-  res.send("Welcome to the backend server!");
-});
-
-app.get("/newsarticles", (req, res) => {
-  const query = "SELECT * FROM newsarticles";
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error("Error fetching articles:", err);
-      res.status(500).json({ error: "Internal server error" });
-    } else {
-      res.setHeader("Content-Type", "application/json");
-      res.json(results);
-        }
-  });
 });
 
 // User registration
@@ -71,9 +50,11 @@ app.post('/signup', (req, res) => {
           }
         }
       );
->
-  
-const secretKey = process.env.SECRET_KEY;
+    }
+  });
+});
+
+const secretKey = "YqIa7kUN8TM4Mg0lL0k6dBjFYstV12VT";
 
 app.post('/login', (req, res) => {
 	const { email, password } = req.body;
@@ -201,57 +182,9 @@ app.get('/users/:userId', authenticate, (req, res) => {
 	  res.json(results);
 	});
   });
-
-  const publicKeyEvery = process.env.PUBLIC_KEY_EVERY
-
-  app.get('/api/health-resources', async (req, res) => {
-	try {
-	  const response = await fetch(`https://partners.every.org/v0.2/browse/health?apiKey=${publicKeyEvery}`);
-	  const data = await response.json();
-	  res.json(data);
-	} catch (error) {
-	  console.log("Error fetching health resources data:", error);
-	  res.status(500).json({ error: "Error fetching health resources data" });
-	}
-  });
-
-  app.get('/api/job-resources', async (req, res) => {
-	try {
-	  const response = await fetch(`https://partners.every.org/v0.2/search/jobs?apiKey=${publicKeyEvery}`);
-	  const data = await response.json();
-	  res.json(data);
-	} catch (error) {
-	  console.log("Error fetching health resources data:", error);
-	  res.status(500).json({ error: "Error fetching health resources data" });
-	}
-  });
-
-  const jobKey = process.env.JOB_API_KEY;
-  const jobHost = process.env.JOB_API_HOST;
-
-  app.get('/api/jobs', async (req, res) => {
-	try {
-	  const options = {
-		method: 'GET',
-		url: 'https://jobsearch4.p.rapidapi.com/api/v2/Jobs/Search',
-		params: {
-		  SearchQuery: 'intern',
-		  PageSize: '12',
-		  PageNumber: '1'
-		},
-		headers: {
-		  'X-RapidAPI-Key': jobKey,
-		  'X-RapidAPI-Host': jobHost
-		}
-	  };
   
-	  const response = await axios.request(options);
-	  res.json(response.data);
-	} catch (error) {
-	  console.error(error);
-	  res.status(500).json({ error: 'Error fetching job data' });
-	}
-  });
+  
+console.log(endpoint);
   
 
 // Start the server
