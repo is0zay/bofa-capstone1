@@ -1,0 +1,3 @@
+Set up database for newspapers and survey
+Create survey component
+connect survey results to database
