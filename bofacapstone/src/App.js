@@ -11,6 +11,10 @@ import UtilityFooter from "./components/utilityFooter";
 import AboutHistory from "./pages/aboutHistory";
 import Newsletter from "./pages/newsletter";
 import Contact from "./pages/contact";
+import NewAcDash from "./pages/NewAcDash";
+import EngagementDashboard from "./pages/EngagementDashboard";
+import NewACAccounts from "./pages/NewACAccounts";
+
 
 import About from "./pages/about";
 import AboutImportance from "./pages/aboutImportance";
@@ -285,6 +289,11 @@ function App() {
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/contact" element={<Contact />} />
 
+          <Route path="/acengage" element={<EngagementDashboard />} />
+          <Route path="/acaccounts" element={<NewACAccounts />} />
+          <Route path="/acdash" element={<NewAcDash />} />
+
+
           <Route path="/home/jobs" element={<Jobs />} />
 
 		  <Route path="/signup" element={<Signedup />} />
@@ -292,6 +301,7 @@ function App() {
 		  <Route path="/survey" element={<Survey />} />
 		  <Route path="/dashboard" element={<DashboardPage />} />
 		  
+
 
         </Routes>
       </Router>
