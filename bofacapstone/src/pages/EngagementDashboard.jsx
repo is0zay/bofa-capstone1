@@ -28,48 +28,42 @@ const EngagementDashboard = () => {
     <div>
         
         <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
-            <Link to="#" class="brand">
-                <i class='bx bxs-dashboard'></i>
-          <span class="text">BOA</span>
-            </Link>
-            <ul class="side-menu top">
-                <li>
-                <Link to="/acdash">
-                        <i class='bx bxs-dashboard' ></i>
-                        <span class="text">Dashboard</span>
-                    </Link>
-                </li>
-                <li class="active">
-                    <Link href="/acengage">
-                      <i class='bx bxs-show'></i>
-                      <span class="text">Engagement</span>
-                    </Link>
-                  </li>
-                <li>
-                    <Link to="/acaccounts">
-                        <i class='bx bxs-message-dots'></i>
-                        <span class="text">Accounts</span>
-                    </Link>
-                </li>
-                
-                <li>
-                    <Link to="#">
-                        <i class='bx bxs-group' ></i>
-                        <span class="text">Team</span>
-                    </Link>
-                </li> 
-            </ul>
-            <ul class="side-menu">
-                
-                <li>
-                    <Link to="#">
-                        <i class='bx bxs-cog' ></i>
-                        <span class="text">Settings</span>
-                    </Link>
-                </li> 
-
-            </ul>
-        </section>
+		<Link to="#" class="brand">
+			<i class='bx bxs-dashboard'></i>
+			<span class="text">BOA</span>
+		</Link>
+		<ul class="side-menu top">
+			<li>
+				<Link to="/acdash">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</Link>
+			</li>
+			<li class="active">
+				<Link to="/acengage">
+					<i class='bx bxs-show' ></i>
+					<span class="text">Engagement</span>
+				</Link>
+			</li>
+			<li>
+				<Link to="/acaccounts">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Accounts</span>
+				</Link>
+			</li>
+			
+		</ul>
+		<ul class="side-menu">
+			
+			 <li>
+				<Link to="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</Link>
+			</li> 
+		</ul>
+	</section>
+	
        
         <section id="content">
             
