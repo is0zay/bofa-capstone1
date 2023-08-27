@@ -29,8 +29,6 @@ footer::before {
 }
 
 .footer-Mainbox {
-  /* background-color: orange; */
-  /* margin: 10px; */
   padding: 20px;
 }
 
@@ -38,7 +36,7 @@ footer::before {
   background: #012169;
   width: 100vw;
   margin: auto;
-  /* padding: 30px 40px 40px 40px; */
+
   height: 40vh;
 }
 
@@ -51,11 +49,10 @@ footer::before {
   font-size: 1rem;
 }
 .footer-box.first a {
-  font-size: 1.5rem; /* Adjust the font size as needed */
+  font-size: 1.5rem;
 }
 
 .footer-box a:hover {
-  /* color: #f5a623; */
   text-decoration: underline;
 }
 
@@ -64,4 +61,40 @@ footer::before {
   background-color: white;
   height: 25rem;
   margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  footer::before {
+    top: 50px;
+  }
+
+  .footer-content {
+    height: auto;
+  }
+
+  .footer-box {
+    padding: 20px;
+  }
+
+  .footer-box a {
+    font-size: 18px;
+  }
+  .footer-box:not(.first) {
+    display: none;
+  }
+  .footer-box.first a {
+    font-size: 24px;
+  }
+
+  .vertical-line {
+    height: auto;
+    width: 1px;
+    margin: 10px 0;
+  }
 }

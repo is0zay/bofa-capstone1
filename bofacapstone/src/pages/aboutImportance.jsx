@@ -1,29 +1,3 @@
-// import React from "react";
-// import "./aboutImportance.css";
-// const AboutImportance = () => {
-//   return (
-//     <div>
-//       <div className="importance">
-//         <div className="importanceImg">
-//           <img
-//             src="/about/aboutHealth.jpeg"
-//             alt="Depicts Health"
-//             className="importImg"
-//           />
-//         </div>
-//         <h1>Importance of Individuals and Families</h1>
-//         <div className="importanceHealth">
-//           <h2>Access to Healthcare</h2>
-//         </div>
-//         <div className="importanceJobs">
-//           <h2>Access to Jobs</h2>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AboutImportance;
 
 import React from "react";
 import "./aboutImportance.css";
@@ -58,11 +32,7 @@ const AboutImportance = () => {
               individuals effectively cope with mental health challenges and
               improve their overall well-being.
             </li>
-            {/* <li>
-              Accessible healthcare services contribute to a healthier
-              population, leading to increased productivity, reduced healthcare
-              costs, and a stronger society.
-            </li> */}
+           
           </ul>
         </div>
 
@@ -84,13 +54,10 @@ const AboutImportance = () => {
               Employment opportunities contribute to economic growth and the
               overall prosperity of communities and nations.
             </li>
-            {/* <li>
-              Accessing jobs through networking, mentorship, and professional
-              communities can open doors to hidden opportunities and provide
-              valuable connections and resources.
-            </li> */}
+          
           </ul>
         </div>
+        
       </div>
     </div>
   );

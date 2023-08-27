@@ -17,18 +17,42 @@
 
 .media-icons {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 20px; /* Add margin for spacing between text and icons */
+  justify-content: center;
+
+  margin-top: 20px;
 }
 
 .media-icons a {
   display: inline-block;
-  margin-left: 10px; /* Add spacing between icons */
-  font-size: 24px; /* Increase icon size */
-  color: #333; /* Default color for icons */
-  transition: color 0.3s ease; /* Add smooth color transition on hover */
+
+  margin: 0 5px;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
 }
 
 .media-icons a:hover {
-  color: #007bff; /* Change color on hover (e.g., blue for Facebook) */
+  color: #007bff;
+}
+
+@media (max-width: 767px) {
+  .topInfo {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .bottomInfo {
+    padding: 5px;
+    margin: 0.5rem;
+  }
+
+  .media-icons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .media-icons a {
+    font-size: 18px;
+    margin: 0 3px;
+  }
 }

@@ -11,7 +11,7 @@
   position: relative;
   top: 50%;
   left: 10%;
-  /* transform: translate(-50%, -50%); */
+ 
   text-align: center;
   color: white;
   padding: 1rem;
@@ -19,6 +19,7 @@
   max-width: 80%;
   border-radius: 10px;
 }
+
 
 .options {
   display: flex;
@@ -47,10 +48,10 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  font-size: 4vw; /* Adjust font size for responsiveness */
+  font-size: 4vw; 
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 2vw; /* Adjust padding for responsiveness */
-  border-radius: 2vw; /* Adjust border radius for responsiveness */
+  padding: 2vw; 
+  border-radius: 2vw;
   animation: fadeInOut 5s linear;
   opacity: 0;
   animation-fill-mode: forwards;
@@ -58,8 +59,8 @@
 
 @media screen and (max-width: 768px) {
   .videoOverlay {
-    font-size: 6vw; /* Adjust font size for smaller screens */
-    padding: 3vw; /* Adjust padding for smaller screens */
-    border-radius: 3vw; /* Adjust border radius for smaller screens */
+    font-size: 6vw;
+    padding: 3vw; 
+    border-radius: 3vw; 
   }
 }
