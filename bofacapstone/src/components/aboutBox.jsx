@@ -12,7 +12,6 @@ function AboutBox({ img, title, info }) {
           </div>
         </div>
       </section>
-      ;
     </div>
   );
 }
