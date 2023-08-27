@@ -99,6 +99,18 @@ body {
 	display: flex;
 	justify-content: center;
 }
+ /* Add the two below */
+ #sidebar .brand img {
+	max-height: 45px; 
+	width: auto;
+	transition: max-height 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Use cubic-bezier for smoother transition */
+  }
+  
+  #sidebar.hide .brand img {
+	max-height: 28px; /* Change max-height instead of height for a smoother transition */
+  }
+  
+
 #sidebar .side-menu {
 	width: 100%;
 	margin-top: 48px;
