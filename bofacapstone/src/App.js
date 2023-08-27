@@ -11,6 +11,11 @@ import UtilityFooter from "./components/utilityFooter";
 import AboutHistory from "./pages/aboutHistory";
 import Newsletter from "./pages/newsletter";
 import Contact from "./pages/contact";
+
+import About from "./pages/about";
+import AboutImportance from "./pages/aboutImportance";
+import Jobs from "./pages/jobs";
+
 import Signedup from "./pages/Signedup";
 import LogInPage from "./pages/LogInPage";
 import axios from "axios";
@@ -265,6 +270,7 @@ const Survey = () => {
 
 
 
+
 function App() {
   return (
     <div className="App">
@@ -273,9 +279,14 @@ function App() {
         <MainNav />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/about/history" element={<AboutHistory />} />
+          <Route path="/about/importance" element={<AboutImportance />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="/home/jobs" element={<Jobs />} />
+
 		  <Route path="/signup" element={<Signedup />} />
 		  <Route path="/login" element={<LogInPage />} />
 		  <Route path="/survey" element={<Survey />} />

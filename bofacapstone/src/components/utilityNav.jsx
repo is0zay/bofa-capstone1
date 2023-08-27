@@ -7,12 +7,19 @@ const UtilityNav = () => {
       <nav>
         <ul className="utilityNavContainer">
           <li className="utilityNavItem">
-            <Link to="/">Personal</Link>
+            <Link to="/">Admin</Link>
           </li>
           <li className="utilityNavItem">
-            <Link to="/">Health</Link>
+            <Link to="/home/health">Health</Link>
           </li>
           <li className="utilityNavItem">
+
+            <Link to="/home/jobs">Job Creation</Link>
+          </li>
+          <li className="utilityNavSideContainer">
+            <ul className="utilitySideItems">
+              <li className="utilityNavItem">Sign Up</li>
+
             <Link to="/">Job Creation</Link>
           </li>
           <li className="utilityNavItem">
