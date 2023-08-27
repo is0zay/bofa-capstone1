@@ -16,9 +16,11 @@ function Divider({ title, imageUrl, body, info }) {
           <p>{info}</p>
         </div>
       </div>
-      <div className="homeDivder-img-container">
-        <img src={imageUrl} alt=" " />
-      </div>
+      {imageUrl && (
+        <div className="homeDivder-img-container">
+          <img src={imageUrl} alt="" />
+        </div>
+      )}
     </div>
   );
 }

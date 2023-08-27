@@ -7,22 +7,27 @@ const UtilityNav = () => {
       <nav>
         <ul className="utilityNavContainer">
           <li className="utilityNavItem">
+
             <Link to="/acdash">Admin</Link>
+
+            <Link to="/">Admin</Link>
+
           </li>
           <li className="utilityNavItem">
-            <Link to="/">Health</Link>
+            <Link to="/home/health">Health</Link>
           </li>
           <li className="utilityNavItem">
-            <Link to="/">Job Creation</Link>
+
+            <Link to="/home/jobs">Job Creation</Link>
           </li>
           <li className="utilityNavItem">
-            <Link to="/">Survey</Link>
+            <Link to="/survey">Survey</Link>
           </li>
           <li className="utilityNavSideContainer">
             <ul className="utilitySideItems">
-              <li className="utilityNavItem">Complete Our Survey</li>
+              <Link to="/signup" className="utilityNavItem">Sign Up</Link>
               <li className="utility-vertical-line"></li>
-              <li className="utilityNavItem">Sign In</li>
+              <Link to="/login" className="utilityNavItem">Sign In</Link>
             </ul>
           </li>
           <div className="utilityNavSpacer"></div>
