@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './NewAcDash.css';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const NewAcDash = () => {
@@ -26,6 +27,21 @@ const NewAcDash = () => {
 
   return (
     <div>
+		<Helmet>
+			<style>
+			{`
+				.utilityNav {
+				display: none;
+				}
+				.navbar {
+				display: none;
+				}
+				.footer-content, .utilityFooter {
+				display: none;
+				}
+			`}
+			</style>
+      	</Helmet>
        
 	<section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
 		<Link to="#" class="brand">

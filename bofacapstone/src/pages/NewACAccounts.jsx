@@ -1,9 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './NewACAccounts.css';
+import { Helmet } from 'react-helmet';
+
+import axios from 'axios';
+
 const NewACAccounts = () => {
     const [darkMode, setDarkMode] = useState(false);
     const [sidebarHidden, setSidebarHidden] = useState(false);
+
+	const [users, setUsers] = useState(null);
+
+	useEffect(() => {
+		const fetchUsers = async () => {
+		  try {
+			const response = await axios.get('http://localhost:3003/list-users');
+			console.log(response);
+			setUsers(response.data);
+		  } catch (error) {
+			console.error('Error fetching users:', error);
+		  }
+		};
+	
+		fetchUsers();
+	  }, []);
+
+	  console.log(users);
      // Function to toggle dark mode
     const toggleDarkMode = () => {
     // Toggle the state
@@ -20,6 +42,22 @@ const NewACAccounts = () => {
   };
   return (
     <div>
+		<Helmet>
+			<style>
+			{`
+				.utilityNav {
+				display: none;
+				}
+				.navbar {
+				display: none;
+				}
+				.footer-content, .utilityFooter {
+				display: none;
+				}
+			`}
+			</style>
+      	</Helmet>
+
       <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
         <Link to="#" class="brand">
             <i class='bx bxs-dashboard'></i>
@@ -67,6 +105,23 @@ const NewACAccounts = () => {
             <input type="checkbox" id="switch-mode" hidden checked={darkMode} onChange={toggleDarkMode}/>
             <label for="switch-mode" class="switch-mode"></label>
         </nav>
+
+		<div className='accounts-list'>
+			<h1>User List</h1>
+			{users ? (
+            users.map((user) => (
+              <div key={user.id} className="user-card">
+                <h2>{user.first_name} {user.last_name}</h2>
+                <p>Email: {user.email}</p>
+                {/* Other user details */}
+              </div>
+            ))
+          ) : (
+            <div className="loading-screen">
+              <h2>Loading...</h2>
+            </div>
+          )}
+		</div>
     </section>
     </div>
   )

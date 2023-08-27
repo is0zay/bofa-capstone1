@@ -76,6 +76,7 @@ app.post('/signup', (req, res) => {
 });
 
 
+
   
 const secretKey = process.env.SECRET_KEY;
 
@@ -257,6 +258,21 @@ app.get('/users/:userId', authenticate, (req, res) => {
 	}
   });
   
+  // get users for dashboard
+  app.get('/list-users', (req, res) => {
+	const query = `SELECT * from Users u ;`;
+  
+	// Execute the SQL query
+	db.query(query, (error, results) => {
+	  if (error) {
+		console.error('Error executing the query:', error);
+		res.status(500).json({ error: 'An error occurred' });
+		return;
+	  }
+	  res.json(results);
+	});
+  });
+
 
 // Start the server
 app.listen(3003, () => {

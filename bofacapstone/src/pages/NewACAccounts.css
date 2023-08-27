@@ -39,7 +39,7 @@ body {
     overflow-x: hidden;
 }
 /* Hide Nav and Footer */
-.utilityNav {
+/* .utilityNav {
     display: none;
 }
 .navbar{
@@ -47,7 +47,7 @@ body {
 }
 .footer-content, .utilityFooter{
     display: none;
-}
+} */
 /* SIDEBAR */
 #sidebar {
     position: fixed;
