@@ -3,6 +3,7 @@ import "./home.css";
 import Card from "../components/homeCard";
 import Divider from "../components/homeDivider";
 import BlueDivider from "../components/blueDivider";
+import Button from "../components/buttonLink";
 const Home = () => {
   return (
     <div>
@@ -16,9 +17,7 @@ const Home = () => {
             alt="Philanthropic Strategy Video"
           />
         </video>
-        <div className="videoOverlay">
-          What Would You Like The Power To Do?
-        </div>
+        <div className="videoOverlay">What Would You Like The Power To Do?</div>
       </div>
 
       <BlueDivider
@@ -57,6 +56,7 @@ In each endeavor, compassion is our driving force, uniting us in the shared goal
             These partnerships serve as a pillar of support for vulnerable segments of society, encompassing working families, young individuals, seniors, persons with disabilities, veterans, and those touched by the criminal justice system. By collaborating closely, we empower these groups to stride confidently towards their aspirations."
         info="We stand hand in hand with nonprofit programs dedicated to guiding students towards their dreams, irrespective of background. Our support extends particularly to first-generation, low-income, and differently-abled students, amplifying opportunities for success, including certificates and degrees, shaping tomorrow's leaders."
       />
+      <Button to="./home/jobs" text="Click Me!" />
     </div>
   );
 };

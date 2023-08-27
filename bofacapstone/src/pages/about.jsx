@@ -18,14 +18,7 @@ const About = () => {
         info="We envision a future where individuals and families thrive, small businesses prosper, and communities flourish. Through our strategic investments and collaborative efforts, we aspire to create a positive ripple effect that spreads well-being, growth, and prosperity. "
       />
 
-      {/* <BlueDivider
-        imageUrl=""
-        title="Our Vision"
-        body="Our primary mission is to enhance the lives of individuals and families. We believe in the power of investing in the fundamental pillars that contribute to a thriving society. Our focus areas include:"
-        info="Health and Wellness: We're dedicated to promoting better health for all. Through strategic initiatives and partnerships, we aim to provide access to quality healthcare resources and information that empower individuals to lead healthier lives.
-        mployment Opportunities: We understand the significance of meaningful work in people's lives. Our efforts include collaborating with local businesses, organizations, and institutions to create job opportunities that foster personal and professional growth.
-        "
-      /> */}
+     
 
       <InfoSection
         imgUrl="/homePhotos/handsOnTree.jpg"
