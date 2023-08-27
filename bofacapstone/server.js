@@ -32,6 +32,23 @@ db.connect((err) => {
   console.log('Connected to the database');
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the backend server!");
+});
+
+app.get("/newsarticles", (req, res) => {
+  const query = "SELECT * FROM newsarticles";
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error fetching articles:", err);
+      res.status(500).json({ error: "Internal server error" });
+    } else {
+      res.setHeader("Content-Type", "application/json");
+      res.json(results);
+        }
+  });
+});
+
 // User registration
 app.post('/signup', (req, res) => {
   const { first_name, last_name, email, password } = req.body;
@@ -54,10 +71,8 @@ app.post('/signup', (req, res) => {
           }
         }
       );
-    }
-  });
-});
-
+>
+  
 const secretKey = process.env.SECRET_KEY;
 
 app.post('/login', (req, res) => {
