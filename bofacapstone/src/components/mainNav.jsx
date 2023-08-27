@@ -99,6 +99,7 @@ import { Link } from "react-router-dom";
 import "./mainNav.css";
 
 const MainNav = () => {
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -108,6 +109,7 @@ const MainNav = () => {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+
 
   return (
     <div>
@@ -159,11 +161,22 @@ const MainNav = () => {
 
             <ul className="dropdown-menu">
               <li>
-                <Link to="/newsletter/latest">Latest</Link>
+                {/* <Link
+                  to="/newsletter#latest">
+                  Latest
+                </Link> */}
+                <a href="/newsletter#latest">Latest</a>
               </li>
 
               <li>
+
+                {/* <Link
+                  to="/newsletter#articles">
+                  Articles
+                </Link> */}
+        
                 <Link to="/newsletter/articles">Articles</Link>
+
               </li>
             </ul>
           </li>
