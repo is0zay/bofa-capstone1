@@ -1,29 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import "./homeCard.css";
 import "./GAHealth.css";
 
 const GAHealth = ({ userData }) => {
+	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		// Clear the token from local storage or cookie
+		localStorage.removeItem('token');
+
+		// Redirect to the login page
+		navigate('/login');
+	};
+
 	const [healthResources, setHealthResources] = useState(null);
 
 	useEffect(() => {
 		const fetchData = async () => {
-			try {
-				const response = await fetch("https://partners.every.org/v0.2/browse/health?apiKey=pk_live_86a419192b705c472ffaeceac186383f");
-				const data = await response.json();
-				setHealthResources(data);
-				console.log(healthResources.nonprofits);
-			} catch (error) {
-				console.log("Error fetching health resources data:", error)
-			}
+		  try {
+			const response = await fetch('http://localhost:3003/api/health-resources');
+			const data = await response.json();
+			setHealthResources(data);
+			console.log(healthResources.nonprofits);
+		  } catch (error) {
+			console.log("Error fetching health resources data:", error);
+		  }
 		};
-
+	  
 		fetchData();
-	}, []);
+	  }, []);
 
 	console.log(userData);
   return (
 	<div>
+		<div className='logout-div'>
+			<button className="logout-button" onClick={handleLogout}>Logout</button>
+		</div>
+
 		<div className="homeDividerContainerBlue">
 			<div className="homeDivder-img-container">
 			</div>
@@ -58,7 +73,7 @@ const GAHealth = ({ userData }) => {
 				{healthResources && healthResources.nonprofits.map(resource => (
 					<div key={resource.id}>
 						
-						<div className="homeCardContainer">
+						<div className="homeCardContainerGIHealth">
 							<div className="cardImgContainer">
 								<img src={resource.coverImageUrl} alt=" " />
 							</div>

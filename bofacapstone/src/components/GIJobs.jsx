@@ -19,18 +19,19 @@ const GIJobs = ({ userData }) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			try {
-				const response = await fetch("https://partners.every.org/v0.2/search/jobs?apiKey=pk_live_86a419192b705c472ffaeceac186383f");
-				const data = await response.json();
-				setHealthResources(data);
-				console.log(healthResources.nonprofits);
-			} catch (error) {
-				console.log("Error fetching health resources data:", error)
-			}
+		  try {
+			const response = await fetch('http://localhost:3003/api/job-resources');
+			const data = await response.json();
+			setHealthResources(data);
+			console.log(healthResources.nonprofits);
+		  } catch (error) {
+			console.log("Error fetching health resources data:", error);
+		  }
 		};
-
+	  
 		fetchData();
-	}, []);
+	  }, []);
+		
 
   return (
 	<div>
@@ -83,6 +84,7 @@ const GIJobs = ({ userData }) => {
 								</div>
 								<div className="cardBtn">
 								<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`} target='_blank'>Donate</Link>
+								
 								</div>
 							</div>
 						</div>
@@ -95,4 +97,4 @@ const GIJobs = ({ userData }) => {
   )
 }
 
-export default GIJobs
+export default GIJobs;

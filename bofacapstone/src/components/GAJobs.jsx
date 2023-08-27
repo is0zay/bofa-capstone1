@@ -1,41 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./homeCard.css";
 import axios from 'axios';
 import './GAJobs.css';
 
 const GAJobs = ({ userData }) => {
+	const navigate = useNavigate();
+
+	const handleLogout = () => {
+		// Clear the token from local storage or cookie
+		localStorage.removeItem('token');
+
+		// Redirect to the login page
+		navigate('/login');
+	};
+
 	const [jobs, setJobs] = useState(null);
 	useEffect(() => {
 		const fetchJobs = async () => {
-		  const options = {
-			method: 'GET',
-			url: 'https://jobsearch4.p.rapidapi.com/api/v2/Jobs/Search',
-			params: {
-			  SearchQuery: 'intern',
-			  PageSize: '12',
-			  PageNumber: '1'
-			},
-			headers: {
-			  'X-RapidAPI-Key': '02f9ac2000mshb46ad2986ff68b0p118e21jsn9de976b1c24d',
-			  'X-RapidAPI-Host': 'jobsearch4.p.rapidapi.com'
+			try {
+			  const response = await axios.get('http://localhost:3003/api/jobs');
+			  setJobs(response.data);
+			  console.log(response.data);
+			} catch (error) {
+			  console.error(error);
 			}
 		  };
-	
-		  try {
-			const response = await axios.request(options);
-			setJobs(response.data);
-			console.log(response.data);
-		  } catch (error) {
-			console.error(error);
-		  }
-		};
 	
 		fetchJobs();
 	  }, []);                                                     
 	
   return (
 	<div>
+		<div className='logout-div'>
+			<button className="logout-button" onClick={handleLogout}>Logout</button>
+		</div>
+
 	  	<div className="homeDividerContainerBlue">
 			<div className="homeDivder-img-container">
 			</div>

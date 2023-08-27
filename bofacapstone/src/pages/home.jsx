@@ -3,6 +3,8 @@ import "./home.css";
 import Card from "../components/homeCard";
 import Divider from "../components/homeDivider";
 import BlueDivider from "../components/blueDivider";
+
+
 const Home = () => {
   return (
     <div>
