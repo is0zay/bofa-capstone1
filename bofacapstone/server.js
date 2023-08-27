@@ -71,7 +71,9 @@ app.post('/signup', (req, res) => {
           }
         }
       );
->
+	}
+  });
+});
   
 const secretKey = process.env.SECRET_KEY;
 
