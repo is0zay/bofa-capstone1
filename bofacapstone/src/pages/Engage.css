@@ -377,7 +377,6 @@ body {
 
 
 /* Styles for the counter section */
-/* Styles for the counter section */
 .counter {
     background-color: var(--light);; /* Light background color */
     border: 2px solid #ddd; /* Border all around */
@@ -425,5 +424,62 @@ body {
   background-color: transparent; /* Set the background color as needed */
 }
 
+@media screen and (max-width: 768px) {
+   /* Sidebar adjustments for mobile */
+   #sidebar {
+       width: 60px;
+   }
+   #sidebar.hide {
+       display: block;
+   }
 
-  
+   /* Content adjustments for mobile */
+   #content {
+       width: 100%;
+       left: 0;
+   }
+
+   .counter {
+      padding: 20px; /* Adjust padding for mobile */
+  }
+
+  .counter h1 {
+      font-size: 36px; /* Reduce font size for mobile */
+  }
+
+  .counter-value {
+      font-size: 36px; /* Reduce font size for mobile */
+  }
+
+ 
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+   /* Sidebar and content adjustments for tablets */
+   #sidebar {
+       width: 280px;
+       left: 0;
+       overflow-y: hidden;
+   }
+   #sidebar.hide {
+       display: block;
+   }
+   #content {
+       width: calc(100% - 280px);
+       left: 280px;
+   }
+
+   .counter {
+      padding: 30px; /* Adjust padding for tablets */
+  }
+
+  .counter h1 {
+      font-size: 42px; /* Adjust font size for tablets */
+  }
+
+  .counter-value {
+      font-size: 42px; /* Adjust font size for tablets */
+  }
+
+   
+}
