@@ -91,6 +91,14 @@
     flex-wrap: wrap;
     align-items: center;
   }
+  
+  .utilityNavItem2 {
+	color: rgba(255, 255, 255, 0.8); /* Less bright white text */
+	text-decoration: none;
+	position: relative;
+	padding: 4px 8px;
+	transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+  }
 
   .utilityNavSideContainer {
     margin-left: 0; 
@@ -107,4 +115,15 @@
   .utility-vertical-line {
     display: none; 
   }
+}
+
+@media (max-width: 420px) {
+	.utilityNavItem2 {
+		color: rgba(255, 255, 255, 0.8); /* Less bright white text */
+		text-decoration: none;
+		position: relative;
+		padding: 2px 2px;
+		transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+		font-size: 15px;
+	  }
 }

@@ -62,10 +62,8 @@
   padding-left: 2rem;
 }
 
-
-
-@media (max-width: 768px) {
-  .homeDividerContainer,
+@media (max-width: 1400px) {
+	.homeDividerContainer,
   .homeDividerContainerBlue {
     padding: 1rem;
     margin-top: 30px;
@@ -73,6 +71,18 @@
     flex-direction: column;
     text-align: center;
   }
+}
+
+
+@media (max-width: 768px) {
+	.homeDividerContainer,
+	.homeDividerContainerBlue {
+	  padding: 1rem;
+	  margin-top: 30px;
+	  margin-bottom: 30px;
+	  flex-direction: column;
+	  text-align: center;
+	}
 
   .homeDivider-content,
   .homeDivider-container-blue {
