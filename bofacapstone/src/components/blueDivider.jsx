@@ -4,9 +4,11 @@ import "./homeDivider.css";
 function BlueDivider({ title, imageUrl, body, info }) {
   return (
     <div className="homeDividerContainerBlue">
-      <div className="homeDivder-img-container">
-        <img src={imageUrl} alt=" " />
-      </div>
+      {imageUrl && (
+        <div className="homeDivder-img-container">
+          <img src={imageUrl} alt="" />
+        </div>
+      )}
       <div className="homeDivider-content">
         <div className="cardTitle">
           <h3>{title}</h3>

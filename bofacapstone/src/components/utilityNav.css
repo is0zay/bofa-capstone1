@@ -5,7 +5,7 @@
 
 .utilityNavContainer {
   list-style: none;
-  padding: 0 0 0 2rem;
+  padding: 0 2rem;
   height: 35px;
   line-height: 35px;
   max-width: 90.625rem;
@@ -18,7 +18,6 @@
 .utilityNavSideContainer {
   background-color: #012169;
   margin-left: auto;
-  padding-right: 2rem;
 }
 
 .utilitySideItems {
@@ -26,22 +25,53 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin: 10px; */
+  margin: 0;
+  padding: 0;
 }
 
 .utilityNavItem {
-  margin: 0 15px;
   font-size: 14px;
+  width: auto;
+  padding: 0 10px;
+
 }
 
 .utilityNavItem a {
   color: #012169;
   text-decoration: none;
 }
-
-.utilityNavSpacer {
-  padding-right: 2rem;
+/* begin */
+.utilityNavItem2 {
+  color: rgba(255, 255, 255, 0.8); /* Less bright white text */
+  text-decoration: none;
+  position: relative;
+  padding: 8px 16px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
 }
+
+.utilityNavItem2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px; /* Width of the vertical line */
+  height: 100%;
+  background-color: var(#1b01c2 ); /* Blue section */
+  border-top-left-radius: 20px; /* Rounded top-left corner */
+  border-bottom-left-radius: 20px; /* Rounded bottom-left corner */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.utilityNavItem2:hover {
+  background-color: var(#1b01c2); /* Blue highlighting on hover */
+  color: #fff; /* White text on hover */
+}
+
+.utilityNavItem2:hover::before {
+  background-color: var(#1b01c2 ); /* Blue vertical line on hover */
+}
+
+/* Stop */
 
 .utility-vertical-line {
   width: 1px;
@@ -53,4 +83,28 @@
 .utilitySideItems {
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 768px) {
+  .utilityNavContainer {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .utilityNavSideContainer {
+    margin-left: 0; 
+  }
+
+  .utilityNavSpacer {
+    padding-right: 1rem; 
+  }
+
+  .utilitySideItems {
+    justify-content: space-around; 
+  }
+
+  .utility-vertical-line {
+    display: none; 
+  }
 }

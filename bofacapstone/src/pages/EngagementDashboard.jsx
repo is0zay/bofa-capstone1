@@ -1,6 +1,9 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./Engage.css"
+import { Helmet } from 'react-helmet';
+import { useCounter } from './counter';
+
 
 const EngagementDashboard = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -24,13 +27,30 @@ const EngagementDashboard = () => {
     setSidebarHidden(!sidebarHidden);
   };
 
+  const { counter } = useCounter(); 
+
   return (
     <div>
+		<Helmet>
+			<style>
+			{`
+				.utilityNav {
+				display: none;
+				}
+				.navbar {
+				display: none;
+				}
+				.footer-content, .utilityFooter {
+				display: none;
+				}
+			`}
+			</style>
+      	</Helmet>
         
         <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
-      <Link to="#" className="brand">
-        <img src="./nav/boaLogo.png" alt="website logo" /> 
-      </Link>
+        <Link to="/" className="brand">
+  <img src="./nav/boaLogo.png" alt="website logo" />
+</Link>
 		<ul class="side-menu top">
 			<li>
 				<Link to="/acdash">
@@ -74,21 +94,27 @@ const EngagementDashboard = () => {
                 </form>
                 <input type="checkbox" id="switch-mode" hidden checked={darkMode} onChange={toggleDarkMode} />
                 <label for="switch-mode" class="switch-mode"></label>
-                <span id="username-section"></span>
             </nav>
             
-        <div class="counter">
-               <h1>Website Engagement</h1> 
-            </div>
-            <div class="containerf">
-                <button id="counterButton">Click to increment counter</button>
-                <p id="counterValue">0</p>
-                
-            </div>
+            <div className="emptytop">
+         
+         
+  </div>
+
+            <div className="counter">
+  <h1>Website Engagement</h1>
+  <div className="counter-value">
+  {counter}
+  </div>
+</div>
+
+<div className="emptybottom">
+          
+           </div>
         </section>
             
     </div>
-  )
+  );
 }
 
 export default EngagementDashboard

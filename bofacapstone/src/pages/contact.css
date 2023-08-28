@@ -5,7 +5,8 @@
     font-family: "EB Garamond", serif;
     scroll-behavior: smooth;
   }
-  
+    
+
   html {
     scroll-behavior: smooth;
   }
@@ -46,7 +47,7 @@
     justify-content: space-between;
     flex-direction: column; /* Change to column layout */
     padding: 30px 20px;
-    border: 1px solid #e1e1e1;
+    /* border: 1px solid #e1e1e1; */
     border-radius: 20px;
     width: 80%;
     margin: 30px auto;
@@ -54,10 +55,15 @@
   
   #form-details form {
     width: 100%;
-    max-width: 100%;
+    max-width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* width: 400px; */
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   #form-details form input,
@@ -70,10 +76,21 @@
   }
   
   #form-details form button {
-    background-color: #1b01c2;
+    /* background-color: #1b01c2;
     color: #fff;
     margin-bottom: 20px;
-    align-self: center;
+    align-self: center; */
+    width: 30%;
+	padding: 10px;
+	background-color: #0076c8;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+
+  input:hover, textarea:hover, button:hover {
+    opacity: 0.5;
   }
   
   /* Contact Page cont */
@@ -87,14 +104,29 @@
   }
   
   #form-details .people div {
-    width: calc(20% - 15px);
-    margin-bottom: 20px; /* Add margin between people */
+    width: calc(20% - 10px); /* Adjust the width to 20% for a square shape and account for margin */
+    height: calc(20% - 10px); /* Set the height to match the width */
+    margin-right: 10px; /* Add margin to create spacing between elements */
     padding: 15px;
     border: 1px solid #e1e1e1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
   }
+  
+  #form-details .people div:last-child {
+    margin-right: 0; /* Remove right margin from the last element to prevent spacing */
+  }
+  
+  #form-details .people div:hover {
+    transform: scale(1.05); /* Increase size on hover */
+  }
+  
   
   #form-details .people div img {
     width: 65px;
@@ -121,6 +153,16 @@
   #form-details h2 {
     text-align: center; /* Center text horizontally */
   }
+
+  #contact-page {
+    background-image: linear-gradient(to bottom right, #012169  50%, transparent 50%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    margin: 0; /* Remove default margin on the body */
+    padding: 0; 
+  }
+
+  
   
   /* Start Media Query */
   

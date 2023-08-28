@@ -47,8 +47,6 @@
 }
 
 @media (max-width: 1024px) {
-  /* Tablet devices */
-
   .middle-title {
     font-size: 35px;
   }
