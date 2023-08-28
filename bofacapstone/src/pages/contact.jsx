@@ -28,7 +28,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact-page">
+    <div id="contact-page" className="shared-styles">
       <section id="form-details">
         <form onSubmit={handleSubmit}>
           <h2>Contact Us</h2>
@@ -69,31 +69,31 @@ const Contact = () => {
           <div>
           <img src="/contact/Yonathan.jpeg" alt="Yonathan" />
             <p>
-              <span>John Doe</span> Apprentice <br /> Phone: 123-456-7890 <br /> Email: contact@example.com
+              <span>Yonathan Getachew</span> Apprentice <br /> Phone: 908-854-7012 <br /> Email: ygetachew13@r2happrentice.org
             </p>
           </div>
           <div>
             <img src="/contact/Aishah.png" alt="Aishah" />
             <p>
-              <span>John Doe</span> Apprentice <br /> Phone: 123-456-7890 <br /> Email: contact@example.com
+              <span>Aishah Isom</span> Apprentice <br /> Phone: 908-321-4532 <br /> Email: aisom13@r2happrentice.org
             </p>
           </div>
           <div>
             <img src="/contact/Kellis.jpg" alt="Kellis" />
             <p>
-              <span>Jean Doe</span> Apprentice <br /> Phone: 123-456-7890 <br /> Email: contact@example.com
+              <span>Kellis Somerville</span> Apprentice <br /> Phone: 908-897-4950 <br /> Email: ksomerville13@r2happrentice.org
             </p>
           </div>
           <div>
-            <img src="" alt="Avyanna" />
+            <img src="/contact/Avyanna3.png" alt="Avyanna" />
             <p>
-              <span>Jean Doe</span> Apprentice <br /> Phone: 123-456-7890 <br /> Email: contact@example.com
+              <span>Avyanna King</span> Apprentice <br /> Phone: 908-543-4230 <br /> Email: aking13@r2happrentice.org
             </p>
           </div>
           <div>
             <img src="/contact/Isaiah.jpeg" alt="Isaiah" />
             <p>
-              <span>Jean Doe</span> Apprentice <br /> Phone: +91 1234567890 <br /> Email: contact@example.com
+              <span>Isaiah Shembo</span> Apprentice <br /> Phone: 908-234-5473 <br /> Email: ishembo13@r2happrentice.org
             </p>
           </div>
         </div>

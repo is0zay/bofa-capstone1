@@ -15,7 +15,7 @@ const UtilityNav = () => {
 
           </li>
           <li className="utilityNavItem">
-            <Link to="/home/health">Health</Link>
+            <Link to="/health">Health</Link>
           </li>
           <li className="utilityNavItem">
 
