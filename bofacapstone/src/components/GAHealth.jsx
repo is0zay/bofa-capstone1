@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import "./homeCard.css";
 import "./GAHealth.css";
+import "./buttonLink.css";
 
 const GAHealth = ({ userData }) => {
 	const navigate = useNavigate();
@@ -20,7 +21,7 @@ const GAHealth = ({ userData }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 		  try {
-			const response = await fetch('http://localhost:3003/api/health-resources');
+			const response = await fetch('https://partners.every.org/v0.2/browse/health?apiKey=pk_live_86a419192b705c472ffaeceac186383f');
 			const data = await response.json();
 			setHealthResources(data);
 			console.log(healthResources.nonprofits);
@@ -67,9 +68,9 @@ const GAHealth = ({ userData }) => {
 
 
 		<div className='dash-mid'>
-			<h3>Explore Other Nonprofits Offering Assistance</h3>
+			
 			<div className='exteranal-resources'>
-				<div className='health-nonprofits'>
+				<div className='health-nonprofits-gi'>
 				{healthResources && healthResources.nonprofits.map(resource => (
 					<div key={resource.id}>
 						
@@ -84,8 +85,8 @@ const GAHealth = ({ userData }) => {
 								<div className="cardBody">
 								<p>{resource.description}</p>
 								</div>
-								<div className="cardBtn">
-								<Link to={resource.profileUrl} target="_blank">View More</Link>
+								<div className="cardBtn-ga">
+								<Link to={resource.profileUrl} target="_blank" className='buttonLink-gah'>View More</Link>
 								</div>
 							</div>
 						</div>

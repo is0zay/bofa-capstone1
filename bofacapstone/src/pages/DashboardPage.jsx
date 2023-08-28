@@ -37,7 +37,7 @@ const Survey = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3003/api/survey', responses);
+      await axios.post('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/api/survey', responses);
 
       setIsSubmitted(true);
 
@@ -54,7 +54,7 @@ const Survey = () => {
   useEffect(() => {
     const checkSurveyCompletion = async () => {
       try {
-        const response = await axios.get('http://localhost:3003/api/survey/completed');
+        const response = await axios.get('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/api/survey/completed');
         setHasCompletedSurvey(response.data.completed);
       } catch (error) {
         console.error('Failed to check survey completion', error);

@@ -56,3 +56,22 @@
 	text-align: center;
 	margin-top: 10px;
   }
+
+    
+@media (max-width: 820px) {
+	.health-nonprofits {
+		justify-content: center;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 36vw);
+	}
+	.apiCardContainer {
+		width: 34vw;
+		height: 30vh;
+	}
+}
+
+@media (max-width: 660px) {
+	.login-form {
+		width: 80vw;
+	}
+}

@@ -5,7 +5,7 @@ const NewsLetter = () => {
   const [NewsArticles, SetNewsArticles] = useState([]); // Set initial state to an empty array
 
   useEffect(() => {
-    fetch("http://localhost:3003/newsarticles")
+    fetch("http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/newsarticles")
       .then((response) => response.json())
       .then((data) => SetNewsArticles(data))
       .catch((error) => console.error("Error fetching products:", error));

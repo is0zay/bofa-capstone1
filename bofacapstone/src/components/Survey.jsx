@@ -32,7 +32,7 @@ const Survey = () => {
 
     try {
       // Send the responses to the server using Axios POST request
-      await axios.post('http://localhost:3003/api/survey', responses);
+      await axios.post('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/api/survey', responses);
 
 	  setIsSubmitted(true);
 

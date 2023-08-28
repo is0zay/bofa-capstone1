@@ -44,7 +44,7 @@ const DashboardPage = () => {
 	  const fetchUserData = async () => {
 		try {
 		  const token = localStorage.getItem('token');
-		  const response = await axios.get('http://localhost:3003/getuserinfo', {
+		  const response = await axios.get('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/getuserinfo', {
 			headers: { Authorization: `Bearer ${token}` },
 		  });
 		  const userData = response.data;
@@ -105,7 +105,7 @@ const Survey = () => {
   
 	  try {
 		// Send the responses to the server using Axios POST request
-		await axios.post('http://localhost:3003/api/survey', responses);
+		await axios.post('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/api/survey', responses);
   
 		setIsSubmitted(true);
   
@@ -125,7 +125,7 @@ const Survey = () => {
 	useEffect(() => {
 		const checkSurveyCompletion = async () => {
 		  try {
-			const response = await axios.get('http://localhost:3003/api/survey/completed');
+			const response = await axios.get('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/api/survey/completed');
 			setHasCompletedSurvey(response.data.completed);
 		  } catch (error) {
 			console.error('Failed to check survey completion', error);

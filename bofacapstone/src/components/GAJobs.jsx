@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import "./homeCard.css";
 import axios from 'axios';
 import './GAJobs.css';
 
@@ -19,7 +18,7 @@ const GAJobs = ({ userData }) => {
 	useEffect(() => {
 		const fetchJobs = async () => {
 			try {
-			  const response = await axios.get('http://localhost:3003/api/jobs');
+			  const response = await axios.get('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/api/jobs');
 			  setJobs(response.data);
 			  console.log(response.data);
 			} catch (error) {
@@ -58,16 +57,16 @@ const GAJobs = ({ userData }) => {
 					<div key={job.id}>
 						<div className="apiCardContainer">
 							<div className="cardImgContainer">
-								<h2>{job.title}</h2>
+								<h2 className='job-h2'>{job.title}</h2>
 							</div>
-							<div className="cardContent">
+							<div className="job-cardContent">
 								<div className="cardTitle">
-								<h3>{job.company}</h3>
+								<h3 className='job-h3'>{job.company}</h3>
 								</div>
-								<div className="cardBody">
+								<div className="job-cardBody">
 								<p>{job.postDate}</p>
 								</div>
-								<div className="apiCardBtn">
+								<div className="job-apiCardBtn">
 								<Link to={job.url} target="_blank">View More</Link>
 								</div>
 							</div>

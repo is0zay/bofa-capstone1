@@ -20,7 +20,7 @@ const GIJobs = ({ userData }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 		  try {
-			const response = await fetch('http://localhost:3003/api/job-resources');
+			const response = await fetch(`https://partners.every.org/v0.2/search/jobs?apiKey=pk_live_86a419192b705c472ffaeceac186383f`);
 			const data = await response.json();
 			setHealthResources(data);
 			console.log(healthResources.nonprofits);
@@ -67,11 +67,10 @@ const GIJobs = ({ userData }) => {
 
 		<div className='dash-mid'>
 			<div className='exteranal-resources'>
-				<div className='health-nonprofits'>
+				<div className='health-nonprofits-gi'>
 				{healthResources && healthResources.nonprofits.map(resource => (
 					<div key={resource.id}>
-						
-						<div className="homeCardContainerGIHealth">
+					<div className="homeCardContainerGIHealth">
 							<div className="cardImgContainer">
 								<img src={resource.coverImageUrl} alt=" " />
 							</div>
@@ -82,13 +81,13 @@ const GIJobs = ({ userData }) => {
 								<div className="cardBody">
 								<p>{resource.description}</p>
 								</div>
-								<div className="cardBtn">
-								<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`} target='_blank'>Donate</Link>
-								
+								<div className="card-gih">
+								<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`}>Donate</Link>
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>	
+						
 				))}
 				</div>
 			</div>

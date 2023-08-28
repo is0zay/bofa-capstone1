@@ -16,7 +16,7 @@ const NewACAccounts = () => {
 	useEffect(() => {
 		const fetchUsers = async () => {
 		  try {
-			const response = await axios.get('http://localhost:3003/list-users');
+			const response = await axios.get('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/list-users');
 			console.log(response);
 			setUsers(response.data);
 		  } catch (error) {

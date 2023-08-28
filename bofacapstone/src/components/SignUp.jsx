@@ -17,7 +17,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3003/signup', { first_name, last_name, email, password });
+      await axios.post('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/signup', { first_name, last_name, email, password });
 
       // Perform any necessary action after successful signup
       // e.g., display a success message or redirect to the login page
