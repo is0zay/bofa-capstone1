@@ -360,4 +360,88 @@ body {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   }
   
- 
+ /* Default Styles (Mobile-First) */
+
+/* Mobile Styles (Up to 768px) */
+@media screen and (max-width: 768px) {
+    /* Sidebar adjustments */
+    #sidebar {
+        width: 60px;
+    }
+    #sidebar.hide {
+        display: block;
+    }
+    /* Show a menu button to toggle the sidebar */
+    #menu-button {
+        display: block;
+    }
+
+
+    /* Content adjustments */
+    #content {
+        width: 100%;
+        left: 0;
+    }
+
+    /* Adjustments for .accounts-list */
+    .accounts-list {
+        padding: 16px; /* Example: Reduce padding */
+    }
+
+    #content nav .form-input {
+        display: hide;
+    }
+
+    #content nav .search-btn {
+        display: hide;
+    }
+    /* Additional adjustments for other elements as needed */
+}
+
+/* Tablet Styles (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Sidebar and content adjustments for tablets */
+    #sidebar {
+        width: 280px; /* Example: Restore sidebar width */
+        left: 0;
+        overflow-y: hidden;
+    }
+    #sidebar.hide {
+        display: block;
+    }
+    #content {
+        width: calc(100% - 280px);
+        left: 280px;
+    }
+
+    /* Adjustments for .accounts-list */
+    .accounts-list {
+        padding: 24px; /* Example: Increase padding */
+    }
+
+    /* Additional adjustments for other elements as needed */
+}
+
+/* Desktop Styles (1025px and above) */
+@media screen and (min-width: 1025px) {
+    /* Sidebar and content adjustments for desktop */
+    #sidebar {
+        width: 280px;
+        left: 0;
+        overflow-y: hidden;
+    }
+    #sidebar.hide {
+        display: block;
+    }
+    #content {
+        width: calc(100% - 280px);
+        left: 280px;
+    }
+
+    /* Adjustments for .accounts-list */
+    .accounts-list {
+        padding: 36px 24px; /* Example: Larger padding */
+    }
+
+   
+}
