@@ -7,7 +7,7 @@ const MainFooter = () => {
         <div className="footer-box  first">
           <ul className="footer-Mainbox">
             <li>
-              <a href="/signIn">Sign In</a>
+              <a href="/login">Sign In</a>
             </li>
             <li>
               <a href="/contact">Contact Us</a>

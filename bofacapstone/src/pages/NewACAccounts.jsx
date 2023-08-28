@@ -11,6 +11,8 @@ const NewACAccounts = () => {
 
 	const [users, setUsers] = useState(null);
 
+  const [searchTerm, setSearchTerm] = useState('');
+
 	useEffect(() => {
 		const fetchUsers = async () => {
 		  try {
@@ -40,8 +42,25 @@ const NewACAccounts = () => {
   const toggleSidebar = () => {
     setSidebarHidden(!sidebarHidden);
   };
+
+   // Function to handle search input change
+   const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Function to filter users based on search term
+  const filteredUsers = users
+    ? users.filter((user) =>
+        user.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.last_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.email.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
+
+
   return (
     <div>
+
 		<Helmet>
 			<style>
 			{`
@@ -57,12 +76,11 @@ const NewACAccounts = () => {
 			`}
 			</style>
       	</Helmet>
+     <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
+     <Link to="/" className="brand">
+  <img src="./nav/boaLogo.png" alt="website logo" />
+</Link>
 
-      <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
-        <Link to="#" class="brand">
-            <i class='bx bxs-dashboard'></i>
-            <span class="text">BOA</span>
-        </Link>
         <ul class="side-menu top">
             <li>
                 <Link to='/acdash'>
@@ -70,6 +88,7 @@ const NewACAccounts = () => {
                     <span class="text">Dashboard</span>
                 </Link>
             </li>
+            
             <li>
                 <Link to="/acengage">
                   <i class='bx bxs-show'></i>
@@ -98,7 +117,12 @@ const NewACAccounts = () => {
             <i class='bx bx-menu' onClick={toggleSidebar}></i>
             <form action="#">
                 <div class="form-input">
-                    <input type="search" placeholder="Search..."/>
+                <input
+                type="search"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
                     <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
                 </div>
             </form>
@@ -106,10 +130,10 @@ const NewACAccounts = () => {
             <label for="switch-mode" class="switch-mode"></label>
         </nav>
 
-		<div className='accounts-list'>
-			<h1>User List</h1>
-			{users ? (
-            users.map((user) => (
+        <div className='accounts-list'>
+          <h1>User Accounts</h1>
+          {filteredUsers.length > 0 ? (
+            filteredUsers.map((user) => (
               <div key={user.id} className="user-card">
                 <h2>{user.first_name} {user.last_name}</h2>
                 <p>Email: {user.email}</p>

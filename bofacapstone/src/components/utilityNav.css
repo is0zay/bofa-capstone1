@@ -40,6 +40,38 @@
   color: #012169;
   text-decoration: none;
 }
+/* begin */
+.utilityNavItem2 {
+  color: rgba(255, 255, 255, 0.8); /* Less bright white text */
+  text-decoration: none;
+  position: relative;
+  padding: 8px 16px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.utilityNavItem2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px; /* Width of the vertical line */
+  height: 100%;
+  background-color: var(#1b01c2 ); /* Blue section */
+  border-top-left-radius: 20px; /* Rounded top-left corner */
+  border-bottom-left-radius: 20px; /* Rounded bottom-left corner */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.utilityNavItem2:hover {
+  background-color: var(#1b01c2); /* Blue highlighting on hover */
+  color: #fff; /* White text on hover */
+}
+
+.utilityNavItem2:hover::before {
+  background-color: var(#1b01c2 ); /* Blue vertical line on hover */
+}
+
+/* Stop */
 
 .utility-vertical-line {
   width: 1px;

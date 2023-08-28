@@ -43,11 +43,10 @@ const NewAcDash = () => {
 			</style>
       	</Helmet>
        
-	<section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
-		<Link to="#" class="brand">
-			<i class='bx bxs-dashboard'></i>
-			<span class="text">BOA</span>
-		</Link>
+	   <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
+	   <Link to="/" className="brand">
+  <img src="./nav/boaLogo.png" alt="website logo" />
+</Link>
 		<ul class="side-menu top">
 			<li class="active">
 				<Link to="/acdash">

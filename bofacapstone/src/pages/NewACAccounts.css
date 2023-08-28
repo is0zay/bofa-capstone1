@@ -88,6 +88,16 @@ body {
     display: flex;
     justify-content: center;
 }
+#sidebar .brand img {
+	max-height: 45px; 
+	width: auto;
+	transition: max-height 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Use cubic-bezier for smoother transition */
+  }
+  
+  #sidebar.hide .brand img {
+	max-height: 28px; /* Change max-height instead of height for a smoother transition */
+  }
+  
 #sidebar .side-menu {
     width: 100%;
     margin-top: 48px;
@@ -215,6 +225,7 @@ body {
     display: flex;
     align-items: center;
     height: 36px;
+    color:var(--dark);
 }
 #content nav form .form-input input {
     flex-grow: 1;
@@ -294,3 +305,59 @@ body {
     left: calc(100% - (25px - 4px) - 2px);
 }
 /* NAVBAR */
+
+/* Styles for the user list container */
+.accounts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--poppins);
+    padding: 36px 24px;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+  
+  .accounts-list h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: black; 
+    margin-bottom: 16px;
+  }
+  
+  .user-card {
+    background: var(--light);
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .user-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  
+  .user-card p {
+    color: var(--dark);
+    font-size: 20px; 
+  }
+  
+  .loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--light);
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+ 

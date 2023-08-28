@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./utilityNav.css";
+
+
 const UtilityNav = () => {
+
   return (
     <div className="utilityNav">
       <nav>
@@ -10,11 +13,9 @@ const UtilityNav = () => {
 
             <Link to="/acdash">Admin</Link>
 
-            <Link to="/">Admin</Link>
-
           </li>
           <li className="utilityNavItem">
-            <Link to="/home/health">Health</Link>
+            <Link to="/health">Health</Link>
           </li>
           <li className="utilityNavItem">
 
@@ -25,9 +26,9 @@ const UtilityNav = () => {
           </li>
           <li className="utilityNavSideContainer">
             <ul className="utilitySideItems">
-              <Link to="/signup" className="utilityNavItem">Sign Up</Link>
+              <Link to="/signup" className="utilityNavItem2">Sign Up</Link>
               <li className="utility-vertical-line"></li>
-              <Link to="/login" className="utilityNavItem">Sign In</Link>
+              <Link to="/login" className="utilityNavItem2">Sign In</Link>
             </ul>
           </li>
           <div className="utilityNavSpacer"></div>

@@ -97,6 +97,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./mainNav.css";
+import { useCounter } from '../pages/counter'; 
+
 
 const MainNav = () => {
 
@@ -110,6 +112,12 @@ const MainNav = () => {
     setMobileMenuOpen(false);
   };
 
+  const {incrementCounter } = useCounter();
+
+  const handleClick = () => {
+    console.log('Button clicked'); // Add this line to check if the button click is registered.
+    incrementCounter();
+  };
 
   return (
     <div>
@@ -126,10 +134,14 @@ const MainNav = () => {
             </Link>
             <ul className="dropdown-menu">
               <li>
-                <Link to="/home/health">Health</Link>
-              </li>
-              <li>
-                <Link to="/home/jobs">Jobs</Link>
+              <Link to="/health" onClick={handleClick}>
+            Health
+          </Link>
+        </li>
+        <li>
+          <Link to="/home/jobs" onClick={handleClick}>
+            Jobs
+          </Link>
               </li>
             </ul>
           </li>
@@ -188,7 +200,7 @@ const MainNav = () => {
           </li>
 
           <li className="navItem dropdown">
-            <Link to="/" className="navLink" onClick={closeMobileMenu}>
+            <Link to="/survey" className="navLink" onClick={closeMobileMenu}>
               Survey
             </Link>
           </li>
