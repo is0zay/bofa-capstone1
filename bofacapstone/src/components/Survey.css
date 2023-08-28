@@ -7,10 +7,15 @@
 	justify-content: center;
 	height: 100vh;
 	background-color: #f2f2f2;
+	background-image: linear-gradient(to bottom right, transparent 50%, #e31836 50%);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	margin: 0; /* Remove default margin on the body */
+	padding: 0; 
   }
   
   .survey-form {
-	width: 400px;
+	width: 800px;
 	padding: 20px;
 	background-color: #fff;
 	border-radius: 10px;

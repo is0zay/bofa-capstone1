@@ -28,6 +28,10 @@ import GAJobs from "./components/GAJobs";
 import GIHealth from "./components/GIHealth";
 import GAHealth from "./components/GAHealth";
 
+import { CounterProvider } from './pages/counter';
+import Health from "./pages/Health";
+
+
 
 
 
@@ -279,6 +283,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <CounterProvider>
         <Nav />
         <MainNav />
         <Routes>
@@ -288,6 +293,7 @@ function App() {
           <Route path="/about/importance" element={<AboutImportance />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/health" element={<Health />} />
 
           <Route path="/acengage" element={<EngagementDashboard />} />
           <Route path="/acaccounts" element={<NewACAccounts />} />
@@ -304,9 +310,10 @@ function App() {
 
 
         </Routes>
-      </Router>
-      <MainFooter />
+        <MainFooter />
       <UtilityFooter />
+      </CounterProvider>
+      </Router>
     </div>
   );
 }
