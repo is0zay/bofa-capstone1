@@ -21,7 +21,7 @@ const GIHealth = ({ userData }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 		  try {
-			const response = await fetch('http://localhost:3003/api/health-resources');
+			const response = await fetch('https://partners.every.org/v0.2/browse/health?apiKey=pk_live_86a419192b705c472ffaeceac186383f');
 			const data = await response.json();
 			setHealthResources(data);
 			console.log(healthResources.nonprofits);
@@ -66,9 +66,9 @@ const GIHealth = ({ userData }) => {
     	</div>
 
 
-		<div className='dash-mid'>
+		<div className='dash-mid-health'>
 			<div className='exteranal-resources'>
-				<div className='health-nonprofits'>
+				<div className='health-nonprofits-gi'>
 				{healthResources && healthResources.nonprofits.map(resource => (
 					<div key={resource.id}>
 						
@@ -83,7 +83,7 @@ const GIHealth = ({ userData }) => {
 								<div className="cardBody">
 								<p>{resource.description}</p>
 								</div>
-								<div className="cardBtn">
+								<div className="card-gih">
 								<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`}>Donate</Link>
 								</div>
 							</div>
