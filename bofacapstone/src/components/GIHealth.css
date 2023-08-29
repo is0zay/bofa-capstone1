@@ -1,19 +1,19 @@
 .health-nonprofits-gi {
 	justify-content: center;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 40vw);
+	grid-template-columns: repeat(auto-fit, 33vw);
 }
 .homeCardContainerGIHealth {
-	width: 35vw;
-	height: 38rem;
+	width: 25vw;
+	height: 32rem;
 	overflow: hidden;
 	box-shadow: 0px 0px 15px -5px;
 	transition: 0.5s;
 	animation: ease-in-out;
 	margin: 3rem;
 	border-radius: 1rem;
-	background-color: #c41230;
-	color: #fff;
+	background-color: #ffffff;
+	color: #000;
   }
 
   .homeCardContainerGIHealthBlue {
@@ -58,10 +58,27 @@
 	cursor: pointer;
   }
 
+
+  .logout-button-blue {
+	color: #fff;
+	border: 1px solid white;
+	border-radius: 5px;
+	background-color: #012169;
+	padding: 5px;
+	cursor: pointer;
+  }
+
  .external-resources {
 	display: flex;
 	justify-content: center;
  }
+
+ .cardImgContainer-top {
+	overflow: hidden;
+	height: 200px;
+	width: 100%;
+	
+  }
   
 @media (max-width: 768px) {
 

@@ -35,7 +35,10 @@ const GIHealth = ({ userData }) => {
 
   return (
 	<div>
-            <script async defer src="https://embeds.every.org/0.4/button.js"></script>
+		<Helmet>
+			 <script async defer src="https://embeds.every.org/0.4/button.js"></script>
+		</Helmet> 
+       
        
 
 		<div className='logout-div'>
@@ -50,7 +53,7 @@ const GIHealth = ({ userData }) => {
 				</p>
 				<div className="horizontalBreak"></div>
 				<div>
-					<Link to='https://www.bankofamerica.com/philanthropic/gift-fund-overview/' target={'_blank'} className="dasboard-blue-button">Click Here!</Link>
+					<Link to='https://www.bankofamerica.com/philanthropic/gift-fund-overview/' target={'_blank'} className="logout-button">Click Here!</Link>
 				</div>
 			</div>
 			
@@ -74,7 +77,7 @@ const GIHealth = ({ userData }) => {
 						
 						<div className="homeCardContainerGIHealth">
 							<div className="cardImgContainer">
-								<img src={resource.coverImageUrl} alt=" " />
+								<img src={resource.coverImageUrl} className='cardImgContainer-top' alt=" " />
 							</div>
 							<div className="cardContent">
 								<div className="cardTitle">
@@ -84,7 +87,7 @@ const GIHealth = ({ userData }) => {
 								<p>{resource.description}</p>
 								</div>
 								<div className="card-gih">
-								<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`}>Donate</Link>
+								<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`} className="logout-button-blue">Donate</Link>
 								</div>
 							</div>
 						</div>
