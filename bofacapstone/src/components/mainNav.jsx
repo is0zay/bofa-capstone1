@@ -187,7 +187,7 @@ const MainNav = () => {
                   Articles
                 </Link> */}
         
-                <Link to="/newsletter/articles">Articles</Link>
+                <Link to="/newsletter#articles">Articles</Link>
 
               </li>
             </ul>
