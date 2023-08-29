@@ -62,4 +62,8 @@
     padding: 3vw;
     border-radius: 3vw;
   }
+  .options {
+	display: none;
+	justify-content: center;
+  }
 }
