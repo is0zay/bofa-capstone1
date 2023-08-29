@@ -18,7 +18,7 @@ const GAJobs = ({ userData }) => {
 	useEffect(() => {
 		const fetchJobs = async () => {
 			try {
-			  const response = await axios.get('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/api/jobs');
+			  const response = await axios.get('https://bofa-cap2.onrender.com/api/jobs');
 			  setJobs(response.data);
 			  console.log(response.data);
 			} catch (error) {

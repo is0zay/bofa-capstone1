@@ -15,7 +15,7 @@ const LogIn = ({ onLoginSuccess }) => {
 	
 
     try {
-      const response = await axios.post('http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/login', { email, password });
+      const response = await axios.post('https://bofa-cap2.onrender.com/login', { email, password });
       const { token, userId } = response.data;
 
       // Save the token to local storage or cookie
@@ -26,7 +26,7 @@ const LogIn = ({ onLoginSuccess }) => {
 	 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
 	 // Fetch user-specific data from the server
-	 const userDataResponse = await axios.get(`http://ec2-3-128-31-255.us-east-2.compute.amazonaws.com:3003/users/${userId}`);
+	 const userDataResponse = await axios.get(`https://bofa-cap2.onrender.com/users/${userId}`);
 	 const userData = userDataResponse.data; // User-specific data returned from the server
 
 	
