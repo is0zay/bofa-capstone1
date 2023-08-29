@@ -1,0 +1,67 @@
+/* Survey.css */
+
+.survey-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: #f2f2f2;
+	background-image: linear-gradient(to bottom right, transparent 50%, #e31836 50%);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	margin: 0; /* Remove default margin on the body */
+	padding: 0; 
+  }
+  
+  .survey-form {
+	width: 800px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .survey-form h1 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #333;
+  }
+  
+  .survey-form h3 {
+	margin-bottom: 10px;
+	color: #333;
+  }
+  
+  .survey-form label {
+	display: block;
+	margin-bottom: 10px;
+	color: #333;
+  }
+  
+  .survey-form input[type="radio"],
+  .survey-form input[type="checkbox"] {
+	margin-right: 5px;
+  }
+  
+  .survey-form select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+  
+  .survey-form button[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	background-color: #0076c8;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .survey-form button[type="submit"]:hover {
+	background-color: #005da3;
+  }

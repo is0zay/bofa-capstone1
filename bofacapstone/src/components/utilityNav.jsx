@@ -1,25 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./utilityNav.css";
+
+
 const UtilityNav = () => {
+
   return (
     <div className="utilityNav">
       <nav>
         <ul className="utilityNavContainer">
           <li className="utilityNavItem">
-            <Link to="/">Admin</Link>
+
+            <Link to="/acdash">Admin</Link>
+
           </li>
           <li className="utilityNavItem">
-            <Link to="/home/health">Health</Link>
+            <Link to="/health">Health</Link>
           </li>
           <li className="utilityNavItem">
+
             <Link to="/home/jobs">Job Creation</Link>
+          </li>
+          <li className="utilityNavItem">
+            <Link to="/survey">Survey</Link>
           </li>
           <li className="utilityNavSideContainer">
             <ul className="utilitySideItems">
-              <li className="utilityNavItem">Sign Up</li>
+              <Link to="/signup" className="utilityNavItem2">Sign Up</Link>
               <li className="utility-vertical-line"></li>
-              <li className="utilityNavItem">Sign In</li>
+              <Link to="/login" className="utilityNavItem2">Sign In</Link>
             </ul>
           </li>
           <div className="utilityNavSpacer"></div>
