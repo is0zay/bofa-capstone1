@@ -125,7 +125,7 @@ const MainNav = () => {
         <ul className={`navList ${mobileMenuOpen ? "active" : ""}`}>
           <li className="navLogo">
             <Link to="/">
-              <img src="./nav/boaLogo.webp" alt="website logo" />
+              <img src="./nav/boalogo.png" alt="website logo" />
             </Link>
           </li>
           <li className="navItem dropdown">
