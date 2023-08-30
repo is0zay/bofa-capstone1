@@ -179,7 +179,7 @@ const GIHealth = ({ userData }) => {
 													<p>{resource.description}</p>
 													</div>
 													<div className="card-gih">
-													<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`} className="logout-button-blue">Donate</Link>
+													<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`} className="logout-button-blue" target={'_blank'}>Donate</Link>
 													</div>
 												</div>
 											</div>
