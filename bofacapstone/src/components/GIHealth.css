@@ -79,9 +79,67 @@
 	width: 100%;
 	
   }
-  
-@media (max-width: 768px) {
+  .gi-h3 {
+	font-size: 9rem;
+  }
 
+  .user-dashboard {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+  }
+  
+  .user-sidebar {
+	width: 20%;
+	background-color: #f1f1f1;
+	padding: 20px;
+  }
+  
+  .user-sidebar h2 {
+	margin-bottom: 20px;
+  }
+  
+  .user-sidebar ul {
+	list-style-type: none;
+	padding: 0;
+  }
+  
+  .user-sidebar li {
+	margin-bottom: 10px;
+	cursor: pointer;
+  }
+  
+  .user-content {
+	flex-grow: 1;
+	padding: 20px;
+  }
+  
+  .user-content h1 {
+	margin-bottom: 20px;
+  }
+
+  .cardContent-gi {
+	margin: 1rem;
+	margin-top: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+  }
+
+  .cardBody-gi {
+	margin-bottom: 5%;
+  }
+  
+@media (max-width: 1355px) {
+	.health-nonprofits-gi {
+		grid-template-columns: repeat(auto-fit, 50vw);
+		justify-content: center;
+	}
+	.homeCardContainerGIHealth {
+		width: 40vw;
+		justify-self: center;
+	}
 }
 
 @media (max-width: 660px) {

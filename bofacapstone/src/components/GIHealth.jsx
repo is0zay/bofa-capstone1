@@ -5,6 +5,7 @@ import "./homeCard.css";
 import "./GIHealth.css";
 
 
+
 const GIHealth = ({ userData }) => {
 	const navigate = useNavigate();
 
@@ -76,14 +77,14 @@ const GIHealth = ({ userData }) => {
 					<div key={resource.id}>
 						
 						<div className="homeCardContainerGIHealth">
-							<div className="cardImgContainer">
+							<div className="cardImgContainer-top">
 								<img src={resource.coverImageUrl} className='cardImgContainer-top' alt=" " />
 							</div>
-							<div className="cardContent">
-								<div className="cardTitle">
-								<h3>{resource.name}</h3>
+							<div className="cardContent-gi">
+								<div className="cardTitle-gi">
+								<h3 className='gi-h3'>{resource.name}</h3>
 								</div>
-								<div className="cardBody">
+								<div className="cardBody-gi">
 								<p>{resource.description}</p>
 								</div>
 								<div className="card-gih">
