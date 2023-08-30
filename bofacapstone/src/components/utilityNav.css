@@ -16,7 +16,6 @@
 }
 
 .utilityNavSideContainer {
-  background-color: #012169;
   margin-left: auto;
 }
 
@@ -42,10 +41,9 @@
 }
 /* begin */
 .utilityNavItem2 {
-  color: rgba(255, 255, 255, 0.8); /* Less bright white text */
+  color: #012169; /* Less bright white text */
   text-decoration: none;
   position: relative;
-  padding: 8px 16px;
   transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
 }
 

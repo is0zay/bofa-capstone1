@@ -56,88 +56,46 @@ const GAJobs = ({ userData }) => {
 	<div>
 		<Helmet>
 			 <script async defer src="https://embeds.every.org/0.4/button.js"></script>
-			 <script>
-				{
-					`let menuicn = document.querySelector(".menuicn");
-					let nav = document.querySelector(".navcontainer");
-					
-					menuicn.addEventListener("click", () => {
-						nav.classList.toggle("navclose");
-					})`
-				}
-			 </script>
 		
 			<style>
 			{`
 				.utilityNav {
 				display: none;
 				}
-				.navbar {
-				display: none;
-				}
-				.footer-content, .utilityFooter {
-				display: none;
-				}
+			
 			`}
 			</style>
       	</Helmet>
 
-		  <div className='header'>
+		  
 
-<div class="logosec">
-	<Link to='/'><img src="./nav/boalogo.png" alt="website logo" className='n-logo' /></Link>
-	<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-		class="icn menuicn"
-		id="menuicn"
-		alt="menu-icon"/>
-</div>
+<div class="main-container-g">
+	<div class="navcontainer">
+	<nav class="nav-g">
+	<div class="nav-upper-options">
+		
 
+		<div class="option2 nav-option">
+			<h3>{userData.first_name}</h3>
+		</div>
+		
+		<div class="nav-option option1">
+			<img src=
+	"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+				class="nav-img"
+				alt="dashboard" />
+			<h3> Dashboard</h3>
+		</div>
 
+		<div class="nav-option logout">
+		<a className="logout-button" onClick={handleLogout}>Logout</a>
+		</div>
 
-<div class="message">
-	<div class="circle"></div>
-	<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
-		class="icn"
-		alt=""/>
-	<div class="dp">
-	<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-			class="dpicn"
-			alt="dp"/>
 	</div>
-</div>
-
-</div>
-
-<div class="main-container">
-<div class="navcontainer">
-<nav class="nav">
-<div class="nav-upper-options">
-	
-
-	<div class="option2 nav-option">
-		<h3>{userData.first_name}</h3>
-	</div>
-	
-	<div class="nav-option option1">
-		<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-			class="nav-img"
-			alt="dashboard" />
-		<h3> Dashboard</h3>
+	</nav>
 	</div>
 
-	<div class="nav-option logout">
-	<a className="logout-button" onClick={handleLogout}>Logout</a>
-	</div>
-
-</div>
-</nav>
-</div>
-
-<div class="main">
+<div class="main-g">
 
 <div class="searchbar2">
 <input type="text"
@@ -152,7 +110,7 @@ const GAJobs = ({ userData }) => {
 </div>
 </div>
 
-<div class="box-container">
+<div class="box-container-g">
 
 <div class="head-title-gi">
 				<h1>Welcome {userData.first_name}!</h1>
