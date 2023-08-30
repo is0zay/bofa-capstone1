@@ -89,15 +89,13 @@ body {
     justify-content: center;
 }
 #sidebar .brand img {
-	max-height: 45px; 
-	width: auto;
-	transition: max-height 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Use cubic-bezier for smoother transition */
+    max-height: 45px;
+    width: auto;
+    transition: max-height 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Use cubic-bezier for smoother transition */
   }
-  
   #sidebar.hide .brand img {
-	max-height: 28px; /* Change max-height instead of height for a smoother transition */
+    max-height: 28px; /* Change max-height instead of height for a smoother transition */
   }
-  
 #sidebar .side-menu {
     width: 100%;
     margin-top: 48px;
@@ -305,7 +303,6 @@ body {
     left: calc(100% - (25px - 4px) - 2px);
 }
 /* NAVBAR */
-
 /* Styles for the user list container */
 .accounts-list {
     display: flex;
@@ -316,14 +313,12 @@ body {
     max-height: calc(100vh - 56px);
     overflow-y: auto;
   }
-  
   .accounts-list h1 {
     font-size: 40px;
     font-weight: 600;
-    color: black; 
+    color: black;
     margin-bottom: 16px;
   }
-  
   .user-card {
     background: var(--light);
     border-radius: 20px;
@@ -333,19 +328,16 @@ body {
     text-align: left;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   }
-  
   .user-card h2 {
     font-size: 20px;
     font-weight: 600;
     color: var(--dark);
     margin-bottom: 8px;
   }
-  
   .user-card p {
     color: var(--dark);
-    font-size: 20px; 
+    font-size: 20px;
   }
-  
   .loading-screen {
     display: flex;
     justify-content: center;
@@ -359,9 +351,7 @@ body {
     width: 100%;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   }
-  
  /* Default Styles (Mobile-First) */
-
 /* Mobile Styles (Up to 768px) */
 @media screen and (max-width: 768px) {
     /* Sidebar adjustments */
@@ -375,29 +365,23 @@ body {
     #menu-button {
         display: block;
     }
-
-
     /* Content adjustments */
     #content {
         width: 100%;
         left: 0;
     }
-
     /* Adjustments for .accounts-list */
     .accounts-list {
         padding: 16px; /* Example: Reduce padding */
     }
-
     #content nav .form-input {
         display: hide;
     }
-
     #content nav .search-btn {
         display: hide;
     }
     /* Additional adjustments for other elements as needed */
 }
-
 /* Tablet Styles (769px to 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     /* Sidebar and content adjustments for tablets */
@@ -413,15 +397,12 @@ body {
         width: calc(100% - 280px);
         left: 280px;
     }
-
     /* Adjustments for .accounts-list */
     .accounts-list {
         padding: 24px; /* Example: Increase padding */
     }
-
     /* Additional adjustments for other elements as needed */
 }
-
 /* Desktop Styles (1025px and above) */
 @media screen and (min-width: 1025px) {
     /* Sidebar and content adjustments for desktop */
@@ -437,11 +418,8 @@ body {
         width: calc(100% - 280px);
         left: 280px;
     }
-
     /* Adjustments for .accounts-list */
     .accounts-list {
         padding: 36px 24px; /* Example: Larger padding */
     }
-
-   
 }

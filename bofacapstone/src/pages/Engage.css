@@ -1,25 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
-
 * {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
 }
-
 a {
  text-decoration: none;
 }
-
 li {
  list-style: none;
 }
-
 :root {
    --poppins: 'Poppins', sans-serif;
    --lato: 'Lato', sans-serif;
-
    --light: #F9F9F9;
-   --blue: #e31836;
+   --blue: #E31836;
    --light-blue: #CFE8FF;
    --grey: #eee;
    --dark-grey: #AAAAAA;
@@ -27,37 +22,32 @@ li {
    --red: #DB504A;
    --yellow:#CFE8FF;
    --light-yellow:
-#e31836 ;
+#E31836 ;
    --orange: #FD7238;
    --light-orange: #FFE0D3;
 }
-
 html {
  /* overflow-x: hidden; */
 }
-
 body.dark {
    --light:#012169 ; /* Change */
-   --grey: #ffffff;
+   --grey: #FFFFFF;
    --dark: #FBFBFB;
 }
-
 body {
    background: var(--grey);
    overflow-x: hidden;
 }
-
 /* Hide Nav and Footer */
 /* .utilityNav {
-	display: none;
+  display: none;
 }
 .navbar{
-	display: none;
+  display: none;
 }
 .footer-content, .utilityFooter{
-	display: none;
+  display: none;
 } */
-
 /* SIDEBAR */
 #sidebar {
  position: fixed;
@@ -99,15 +89,13 @@ body {
  justify-content: center;
 }
 #sidebar .brand img {
-	max-height: 45px; 
-	width: auto;
-	transition: max-height 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Use cubic-bezier for smoother transition */
+  max-height: 45px;
+  width: auto;
+  transition: max-height 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Use cubic-bezier for smoother transition */
   }
-  
   #sidebar.hide .brand img {
-	max-height: 28px; /* Change max-height instead of height for a smoother transition */
+  max-height: 28px; /* Change max-height instead of height for a smoother transition */
   }
-  
 #sidebar .side-menu {
  width: 100%;
  margin-top: 48px;
@@ -177,11 +165,6 @@ body {
  justify-content: center;
 }
 /* SIDEBAR */
-
-
-
-
-
 /* CONTENT */
 #content {
  position: relative;
@@ -193,10 +176,6 @@ body {
  width: calc(100% - 60px);
  left: 60px;
 }
-
-
-
-
 /* NAVBAR */
 #content nav {
  height: 56px;
@@ -270,9 +249,7 @@ body {
  border-radius: 0 36px 36px 0;
  cursor: pointer;
 }
-
 /* DELETE nav class="notification" */
-
 /* #content nav .notification {
  font-size: 20px;
  position: relative;
@@ -293,7 +270,6 @@ body {
  justify-content: center;
  align-items: center;
 } */
-
 /* DELETE nav class="profile" */
 /* #content nav .profile img {
  width: 36px;
@@ -301,7 +277,6 @@ body {
  object-fit: cover;
  border-radius: 50%;
 } */
-
 #content nav .switch-mode {
  display: block;
  min-width: 50px;
@@ -326,28 +301,24 @@ body {
 #content nav #switch-mode:checked + .switch-mode::before {
  left: calc(100% - (25px - 4px) - 2px);
 }
-/* NAVBAR */       
-
+/* NAVBAR */
   /* Counter */
 /* .counter {
    text-align: center;
    margin-bottom: 20px;
 }
-
 .counter h1 {
    color: var(--dark);
    font-family: var(--lato);
    font-size: 28px;
    font-weight: 700;
 } */
-
 /* Container */
 /* .containerf {
    text-align: center;
 } */
-
 /* #counterButton {
-   background: var(--blue); 
+   background: var(--blue);
    color: var(--light);
    font-family: var(--lato);
    font-weight: 600;
@@ -358,24 +329,16 @@ body {
    cursor: pointer;
    margin-bottom: 10px;
 } */
-
 /* #counterButton:hover {
-   background: #2D81DA; 
+   background: #2D81DA;
 } */
-
 /* #counter-value {
    color: var(--dark);
    font-family: var(--lato);
    font-size: 20px;
    font-weight: 600;
 } */
-
-
-
 /* Styles for the counter section */
-
-
-
 /* Styles for the counter section */
 .counter {
     background-color: var(--light);; /* Light background color */
@@ -392,14 +355,12 @@ body {
     align-items: center; /* Center items horizontally */
     height: 70vh; /* Center vertically on the page */
   }
-  
   /* Styles for the heading inside the counter */
   .counter h1 {
     font-size: 48px; /* Larger font size */
     margin-bottom: 20px; /* Space below the heading */
     color: var(--dark); /* Dark text color */
   }
-  
   /* Styles for the white box around the counter value */
   .counter-value {
     background-color: white; /* White background */
@@ -411,19 +372,15 @@ body {
     color:#1b01c2; /* Blue text color */
     margin-top: 20px; /* Space above the counter value */
   }
-  
 .emptytop{
     width: 100%;
-    height: 50px; 
+    height: 50px;
 }
-  
- 
 .emptybottom {
   width: 100%;
   height: 50px; /* Adjust the height as needed */
   background-color: transparent; /* Set the background color as needed */
 }
-
 @media screen and (max-width: 768px) {
    /* Sidebar adjustments for mobile */
    #sidebar {
@@ -432,28 +389,21 @@ body {
    #sidebar.hide {
        display: block;
    }
-
    /* Content adjustments for mobile */
    #content {
        width: 100%;
        left: 0;
    }
-
    .counter {
       padding: 20px; /* Adjust padding for mobile */
   }
-
   .counter h1 {
       font-size: 36px; /* Reduce font size for mobile */
   }
-
   .counter-value {
       font-size: 36px; /* Reduce font size for mobile */
   }
-
- 
 }
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
    /* Sidebar and content adjustments for tablets */
    #sidebar {
@@ -468,18 +418,18 @@ body {
        width: calc(100% - 280px);
        left: 280px;
    }
-
    .counter {
       padding: 30px; /* Adjust padding for tablets */
   }
-
   .counter h1 {
       font-size: 42px; /* Adjust font size for tablets */
   }
-
   .counter-value {
       font-size: 42px; /* Adjust font size for tablets */
   }
-
-   
 }
+
+
+
+
+
