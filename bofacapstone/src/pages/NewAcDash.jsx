@@ -45,7 +45,7 @@ const NewAcDash = () => {
        
 	   <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
 	   <Link to="/" className="brand">
-  <img src="./nav/boaLogo.png" alt="website logo" />
+  <img src="./nav/boalogo.png" alt="website logo" />
 </Link>
 		<ul class="side-menu top">
 			<li class="active">
