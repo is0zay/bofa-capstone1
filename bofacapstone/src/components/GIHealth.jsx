@@ -52,7 +52,6 @@ const GIHealth = ({ userData }) => {
 		setSidebarHidden(!sidebarHidden);
 	  };
 	
-	   // Function to handle search input change
 	  
 
   return (
@@ -115,8 +114,6 @@ const GIHealth = ({ userData }) => {
 		</ul>
 	</section>
 	
-
-
 
 	
 	<section id="content">

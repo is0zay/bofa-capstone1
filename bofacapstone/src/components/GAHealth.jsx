@@ -3,9 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import "./homeCard.css";
 import "./GAHealth.css";
+import'./UserDash.css';
 import "./buttonLink.css";
 
 const GAHealth = ({ userData }) => {
+	const [darkMode, setDarkMode] = useState(false);
+	const [sidebarHidden, setSidebarHidden] = useState(false);
 	const navigate = useNavigate();
 
 	const handleLogout = () => {
@@ -33,26 +36,116 @@ const GAHealth = ({ userData }) => {
 		fetchData();
 	  }, []);
 
+	  const toggleDarkMode = () => {
+		// Toggle the state
+		setDarkMode(!darkMode);
+		// Add or remove the .dark class from the body
+		if (!darkMode) {
+		  document.body.classList.add('dark');
+		} else {
+		  document.body.classList.remove('dark');
+		}
+	  };
+
+	  const toggleSidebar = () => {
+		setSidebarHidden(!sidebarHidden);
+	  };
+
 	console.log(userData);
   return (
 	<div>
-		<div className='logout-div'>
-			<button className="logout-button" onClick={handleLogout}>Logout</button>
-		</div>
+		<Helmet>
+			 <script async defer src="https://embeds.every.org/0.4/button.js"></script>
+		
+			<style>
+			{`
+				.utilityNav {
+				display: none;
+				}
+				.navbar {
+				display: none;
+				}
+				.footer-content, .utilityFooter {
+				display: none;
+				}
+			`}
+			</style>
+      	</Helmet>
+       
+	   <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
+	   <Link to="/" className="brand">
+  <img src="./nav/boalogo.png" alt="website logo" />
+</Link>
+		<ul class="side-menu top">
+			
+			<li class="">
+				<Link to="/dashboard">
+					<span class="text">{userData.first_name} {userData.last_name}</span>
+				</Link>
+			</li>
+			<li class="">
+				<Link to="/dashboard">
+					<span class="text">{userData.email}</span>
+				</Link>
+			</li>
+			<li class="">
+				<Link to="/dashboard">
+					<span class="text">{userData.user_purpose}</span>
+				</Link>
+			</li>
+			<li class="active">
+				<Link to="/dashboard">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</Link>
+			</li>
+			
+		</ul>
+		<ul class="side-menu">
+			
+			 <li>
+				<Link to="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</Link>
+			</li> 
+		</ul>
+	</section>
 
-		<div className="homeDividerContainerBlue">
+	<section id="content">
+		
+		<nav>
+			<i class='bx bx-menu' onClick={toggleSidebar}></i>
+			<form action="#">
+				<div class="form-input">
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden  checked={darkMode} onChange={toggleDarkMode}/>
+			<label for="switch-mode" class="switch-mode"></label>
+		
+		</nav>
+		
+		<main className='gi-main'>
+			<div class="head-title-gi">
+				<h1>Welcome {userData.first_name}!</h1>
+				<div className='logout-div'>
+			<a className="logout-button" onClick={handleLogout}>Logout</a>
+		</div>
+			</div>
+
+			<div class="box-info-gi">
+					<div class="box">
+					
+						<div class="text">
+						<div className="homeDividerContainerBlue">
 			<div className="homeDivder-img-container">
 			</div>
 			<div className="homeDivider-content">
-				<div className="cardTitle">
-				<h3>Welcome {userData.first_name}!</h3>
-				</div>
-				<div className="homeDivider-body">
+				<div className="dash-top">
 				<p>Here, you have the incredible opportunity to apply for grants specifically designed to address their health concerns. We understand the importance of well-being and are committed to providing support to individuals in need. By clicking on the provided link, you can access a simple and efficient application process, enabling you to apply for grants tailored to your health requirements. Take the first step towards improving your health today and explore the possibilities that our grants can offer.</p>
 				</div>
-				<div className="horizontalBreak"></div>
-				<div className="homeDivider-info">
-					<Link to='https://www.bankofamerica.com/philanthropic/search/?program=4001&area=All' target={'_blank'} className="dasboard-blue-button">Click Here!</Link>
+				<div className="click-here-btn">
+					<Link to='https://www.bankofamerica.com/philanthropic/search/?program=4001&area=All' target={'_blank'} className="logout-button">Click Here!</Link>
 				</div>
 			</div>
 		</div>
@@ -75,14 +168,14 @@ const GAHealth = ({ userData }) => {
 					<div key={resource.id}>
 						
 						<div className="homeCardContainerGIHealth">
-							<div className="cardImgContainer">
-								<img src={resource.coverImageUrl} alt=" " />
+							<div className="cardImgContainer-top">
+								<img src={resource.coverImageUrl} alt=" " className="cardImgContainer-top" />
 							</div>
-							<div className="cardContent">
-								<div className="cardTitle">
-								<h3>{resource.name}</h3>
+							<div className="cardContent-gi">
+								<div className="cardTitle-gi">
+								<h3 className='gi-h3'>{resource.name}</h3>
 								</div>
-								<div className="cardBody">
+								<div className="cardBody-gi">
 								<p>{resource.description}</p>
 								</div>
 								<div className="cardBtn-ga">
@@ -95,6 +188,21 @@ const GAHealth = ({ userData }) => {
 				</div>
 			</div>
 		</div>
+						</div>
+							
+					</div>
+			
+		</div>
+		
+
+
+	
+		</main>
+		
+	</section>
+
+
+		
 	</div>
   )
 }
