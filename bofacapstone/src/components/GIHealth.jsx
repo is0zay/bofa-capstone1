@@ -59,6 +59,16 @@ const GIHealth = ({ userData }) => {
 	<div>
 		<Helmet>
 			 <script async defer src="https://embeds.every.org/0.4/button.js"></script>
+			 <script>
+				{
+					`let menuicn = document.querySelector(".menuicn");
+					let nav = document.querySelector(".navcontainer");
+					
+					menuicn.addEventListener("click", () => {
+						nav.classList.toggle("navclose");
+					})`
+				}
+			 </script>
 		
 			<style>
 			{`
@@ -86,16 +96,7 @@ const GIHealth = ({ userData }) => {
 		alt="menu-icon"/>
 </div>
 
-<div class="searchbar">
-	<input type="text"
-		placeholder="Search"/>
-	<div class="searchbtn">
-	<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-			class="icn srchicn"
-			alt="search-icon"/>
-	</div>
-</div>
+
 
 <div class="message">
 	<div class="circle"></div>
@@ -120,11 +121,7 @@ const GIHealth = ({ userData }) => {
 	
 
 	<div class="option2 nav-option">
-		<h3>{userData.first_name} {userData.last_name}</h3>
-	</div>
-
-	<div class="nav-option option4">
-		<h3>{userData.user_purpose}</h3>
+		<h3>{userData.first_name}</h3>
 	</div>
 
 	<div class="nav-option option1">

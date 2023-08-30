@@ -55,8 +55,18 @@ const GIJobs = ({ userData }) => {
   return (
 	<div>
 		<Helmet>
-            <script async defer src="https://embeds.every.org/0.4/button.js"></script>
-
+			 <script async defer src="https://embeds.every.org/0.4/button.js"></script>
+			 <script>
+				{
+					`let menuicn = document.querySelector(".menuicn");
+					let nav = document.querySelector(".navcontainer");
+					
+					menuicn.addEventListener("click", () => {
+						nav.classList.toggle("navclose");
+					})`
+				}
+			 </script>
+		
 			<style>
 			{`
 				.utilityNav {
@@ -70,76 +80,86 @@ const GIJobs = ({ userData }) => {
 				}
 			`}
 			</style>
-        </Helmet>
+      	</Helmet>
 
-		<section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
-	   <Link to="/" className="brand">
-  <img src="./nav/boalogo.png" alt="website logo" />
-</Link>
-		<ul class="side-menu top">
-			
-			<li class="">
-				<Link to="/dashboard">
-					<span class="text">{userData.first_name} {userData.last_name}</span>
-				</Link>
-			</li>
-			<li class="">
-				<Link to="/dashboard">
-					<span class="text">{userData.email}</span>
-				</Link>
-			</li>
-			<li class="">
-				<Link to="/dashboard">
-					<span class="text">{userData.user_purpose}</span>
-				</Link>
-			</li>
-			<li class="active">
-				<Link to="/dashboard">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
-				</Link>
-			</li>
-			
-		</ul>
-		<ul class="side-menu">
-			
-			 <li>
-				<Link to="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
-				</Link>
-			</li> 
-		</ul>
-	</section>
+		  <div className='header'>
+
+<div class="logosec">
+	<Link to='/'><img src="./nav/boalogo.png" alt="website logo" className='n-logo' /></Link>
+	<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+		class="icn menuicn"
+		id="menuicn"
+		alt="menu-icon"/>
+</div>
+
+
+
+<div class="message">
+	<div class="circle"></div>
+	<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+		class="icn"
+		alt=""/>
+	<div class="dp">
+	<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+			class="dpicn"
+			alt="dp"/>
+	</div>
+</div>
+
+</div>
+
+<div class="main-container">
+<div class="navcontainer">
+<nav class="nav">
+<div class="nav-upper-options">
 	
 
+	<div class="option2 nav-option">
+		<h3>{userData.first_name}</h3>
+	</div>
 	
-	<section id="content">
-		
-		<nav>
-			<i class='bx bx-menu' onClick={toggleSidebar}></i>
-			<form action="#">
-				<div class="form-input">
-				</div>
-			</form>
-			<input type="checkbox" id="switch-mode" hidden  checked={darkMode} onChange={toggleDarkMode}/>
-			<label for="switch-mode" class="switch-mode"></label>
-		
-		</nav>
-		
-		<main className='gi-main'>
-			<div class="head-title-gi">
+	<div class="nav-option option1">
+		<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+			class="nav-img"
+			alt="dashboard" />
+		<h3> Dashboard</h3>
+	</div>
+
+	<div class="nav-option logout">
+	<a className="logout-button" onClick={handleLogout}>Logout</a>
+	</div>
+
+</div>
+</nav>
+</div>
+
+<div class="main">
+
+<div class="searchbar2">
+<input type="text"
+	name=""
+	id=""
+	placeholder="Search" />
+<div class="searchbtn">
+<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+		class="icn srchicn"
+		alt="search-button" />
+</div>
+</div>
+
+<div class="box-container">
+
+<div class="head-title-gi">
 				<h1>Welcome {userData.first_name}!</h1>
-				<div className='logout-div'>
-			<a className="logout-button" onClick={handleLogout}>Logout</a>
-		</div>
-			</div>
 
-			<div class="box-info-gi">
-					<div class="box">
-					
-						<div class="text">
-							<div className="homeDividerContainerBlue">
+</div>
+
+<div className="homeDividerContainerBlue">
 								<div className='dash-top'>
 									<p>Thank you for your interest in donating and making a positive impact! At Bank of America, we greatly appreciate your generosity and commitment to giving back to the community. We are proud to offer you an opportunity to organize your charitable contributions through our Charitable Gift Fund. With this program, you can streamline your donations, maximize their impact, and support causes that are close to your heart. By leveraging the expertise and resources of the Charitable Gift Fund, you can make a meaningful difference in the lives of those in need. Together, we can create a better future for all. For more information about the Charitable Gift Fund click the link below.
 									</p>
@@ -153,7 +173,7 @@ const GIJobs = ({ userData }) => {
 							<div className="homeDividerContainer">
 							<div className="homeDivider-content">
 								<div className="cardTitle">
-								<h3>Make Quick Contributions to Health Nonprofits</h3>
+								<h3>Make Quick Contributions to Employment Nonprofits</h3>
 								</div>
 							</div>		
 							</div>
@@ -177,7 +197,7 @@ const GIJobs = ({ userData }) => {
 													<p>{resource.description}</p>
 													</div>
 													<div className="card-gih">
-													<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`} className="logout-button-blue">Donate</Link>
+													<Link data-every-style to={`https://www.every.org/${resource.slug}#/donate`} className="logout-button-blue" target={'_blank'}>Donate</Link>
 													</div>
 												</div>
 											</div>
@@ -186,18 +206,13 @@ const GIJobs = ({ userData }) => {
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-			
-		</div>
-		
 
 
-	
-		</main>
-		
-	</section>
+</div>
 
+
+</div>
+</div>
 
 	</div>
   )

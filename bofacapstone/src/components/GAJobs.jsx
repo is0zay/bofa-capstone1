@@ -5,6 +5,8 @@ import axios from 'axios';
 import './GAJobs.css';
 import'./UserDash.css';
 import "./homeCard.css";
+import'./UserDash.css';
+
 
 
 const GAJobs = ({ userData }) => {
@@ -54,6 +56,16 @@ const GAJobs = ({ userData }) => {
 	<div>
 		<Helmet>
 			 <script async defer src="https://embeds.every.org/0.4/button.js"></script>
+			 <script>
+				{
+					`let menuicn = document.querySelector(".menuicn");
+					let nav = document.querySelector(".navcontainer");
+					
+					menuicn.addEventListener("click", () => {
+						nav.classList.toggle("navclose");
+					})`
+				}
+			 </script>
 		
 			<style>
 			{`
@@ -69,89 +81,104 @@ const GAJobs = ({ userData }) => {
 			`}
 			</style>
       	</Helmet>
-       
-	   <section id="sidebar" className={sidebarHidden ? 'hide' : ''}>
-	   <Link to="/" className="brand">
-  <img src="./nav/boalogo.png" alt="website logo" />
-</Link>
-		<ul class="side-menu top">
-			
-			<li class="">
-				<Link to="/dashboard">
-					<span class="text">{userData.first_name} {userData.last_name}</span>
-				</Link>
-			</li>
-			<li class="">
-				<Link to="/dashboard">
-					<span class="text">{userData.email}</span>
-				</Link>
-			</li>
-			<li class="">
-				<Link to="/dashboard">
-					<span class="text">{userData.user_purpose}</span>
-				</Link>
-			</li>
-			<li class="active">
-				<Link to="/dashboard">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
-				</Link>
-			</li>
-			
-		</ul>
-		<ul class="side-menu">
-			
-			 <li>
-				<Link to="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
-				</Link>
-			</li> 
-		</ul>
-	</section>
+
+		  <div className='header'>
+
+<div class="logosec">
+	<Link to='/'><img src="./nav/boalogo.png" alt="website logo" className='n-logo' /></Link>
+	<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+		class="icn menuicn"
+		id="menuicn"
+		alt="menu-icon"/>
+</div>
+
+
+
+<div class="message">
+	<div class="circle"></div>
+	<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+		class="icn"
+		alt=""/>
+	<div class="dp">
+	<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+			class="dpicn"
+			alt="dp"/>
+	</div>
+</div>
+
+</div>
+
+<div class="main-container">
+<div class="navcontainer">
+<nav class="nav">
+<div class="nav-upper-options">
 	
 
+	<div class="option2 nav-option">
+		<h3>{userData.first_name}</h3>
+	</div>
 	
-	<section id="content">
-		
-		<nav>
-			<i class='bx bx-menu' onClick={toggleSidebar}></i>
-			<form action="#">
-				<div class="form-input">
-				</div>
-			</form>
-			<input type="checkbox" id="switch-mode" hidden  checked={darkMode} onChange={toggleDarkMode}/>
-			<label for="switch-mode" class="switch-mode"></label>
-		
-		</nav>
-		
-		<main className='gi-main'>
-			<div class="head-title-gi">
+	<div class="nav-option option1">
+		<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+			class="nav-img"
+			alt="dashboard" />
+		<h3> Dashboard</h3>
+	</div>
+
+	<div class="nav-option logout">
+	<a className="logout-button" onClick={handleLogout}>Logout</a>
+	</div>
+
+</div>
+</nav>
+</div>
+
+<div class="main">
+
+<div class="searchbar2">
+<input type="text"
+	name=""
+	id=""
+	placeholder="Search" />
+<div class="searchbtn">
+<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+		class="icn srchicn"
+		alt="search-button" />
+</div>
+</div>
+
+<div class="box-container">
+
+<div class="head-title-gi">
 				<h1>Welcome {userData.first_name}!</h1>
-				<div className='logout-div'>
-			<a className="logout-button" onClick={handleLogout}>Logout</a>
-		</div>
-			</div>
 
-			<div class="box-info-gi">
-					<div class="box">
-					
-						<div class="text">
-						<div className="homeDividerContainerBlue">
-			<div className="homeDivder-img-container">
-			</div>
-			<div className="homeDivider-content">
-				<div className="cardTitle">
-					<h3>Welcome {userData.first_name}!</h3>
-				</div>
-				<div className="homeDivider-body">
-				<p>We are thrilled to offer users the opportunity to search for internships or co-op positions that align with their interests and career goals. Whether you are a student looking to gain practical experience or a professional seeking career advancement, our platform provides a comprehensive database of internships and co-op opportunities across various industries. We also offer resources for learning new skilsl to help you earn industry demanding certifications.</p>
-				</div>
-				<div className="horizontalBreak"></div>
-			</div>
-		</div>
+</div>
 
-		<div className='dash-mid'>
+<div className="homeDividerContainerBlue">
+								<div className='dash-top'>
+									<p>We are thrilled to offer users the opportunity to search for internships or co-op positions that align with their interests and career goals. Whether you are a student looking to gain practical experience or a professional seeking career advancement, our platform provides a comprehensive database of internships and co-op opportunities across various industries. We also offer resources for learning new skilsl to help you earn industry demanding certifications.
+									</p>
+									<div className='click-here-btn'>
+										<Link to='https://www.bankofamerica.com/philanthropic/gift-fund-overview/' target={'_blank'} className="logout-button">Click Here!</Link>
+									</div>
+								</div>
+				
+							</div>
+
+							<div className="homeDividerContainer">
+							<div className="homeDivider-content">
+								<div className="cardTitle">
+								<h3>Explore Employment Nonprofits</h3>
+								</div>
+							</div>		
+							</div>
+
+							<div className='dash-mid'>
 			<h3 className='earlyJob-h3'>Explore Early Career Opportunities</h3>
 			<div className='exteranal-resources'>
 				<div className='job-list'>
@@ -178,21 +205,18 @@ const GAJobs = ({ userData }) => {
 				</div>
 			</div>
 		</div>
-						</div>
-					</div>
-			
-		</div>
-		
 
+
+</div>
+
+
+</div>
+</div>
+	
 
 	
-		</main>
-		
-	</section>
-		
-
-	  	
-			
+	
+				
 	</div>
   )
 }
