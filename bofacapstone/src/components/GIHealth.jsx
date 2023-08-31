@@ -69,16 +69,16 @@ const GIHealth = ({ userData }) => {
 
 
 <div class="main-container-g">
-<div class="navcontainer">
+<div class="navcontainer-g">
 <nav class="nav-g">
-<div class="nav-upper-options">
+<div class="nav-upper-options-g">
 	
 
-	<div class="option2 nav-option">
+	<div class="option2-g nav-option-g">
 		<h3>{userData.first_name}</h3>
 	</div>
 
-	<div class="nav-option option1">
+	<div class="nav-option-g option1-g">
 		<img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
 			class="nav-img"
@@ -86,7 +86,7 @@ const GIHealth = ({ userData }) => {
 		<h3> Dashboard</h3>
 	</div>
 
-	<div class="nav-option logout">
+	<div class="nav-option-g logout">
 	<a className="logout-button" onClick={handleLogout}>Logout</a>
 	</div>
 

@@ -5,14 +5,13 @@
 
 
 
-.header {
+.header-g {
 height: 70px;
 width: 100vw;
 padding: 0 30px;
 background-color: var(--background-color1);
 position: fixed;
 z-index: 100;
-box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -32,8 +31,8 @@ cursor: pointer;
 }
 
 .searchbar,
-.message,
-.logosec {
+.message-g,
+.logosec-g {
 display: flex;
 align-items: center;
 justify-content: center;
@@ -50,7 +49,6 @@ gap: 60px;
 .searchbar input {
 width: 250px;
 height: 42px;
-border-radius: 50px 0 0 50px;
 background-color: var(--background-color3);
 padding: 0 20px;
 font-size: 15px;
@@ -63,7 +61,6 @@ height: 42px;
 display: flex;
 align-items: center;
 justify-content: center;
-border-radius: 0px 50px 50px 0px;
 background-color: var(--secondary-color);
 cursor: pointer;
 }
@@ -78,7 +75,6 @@ height: 7px;
 width: 7px;
 position: absolute;
 background-color: #fa7bb4;
-border-radius: 50%;
 left: 19px;
 top: 8px;
 }
@@ -86,7 +82,6 @@ top: 8px;
 height: 40px;
 width: 40px;
 background-color: #626262;
-border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -138,7 +133,6 @@ background-color: var(--background-color2);
 position: absolute;
 top: 0px;
 left: 00;
-box-shadow: 1px 1px 10px rgba(198, 189, 248, 0.825);
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -213,8 +207,6 @@ min-height: 300px;
 max-width: 1200px;
 margin: 70px auto 0px auto;
 background-color: #ffffff;
-border-radius: 30px;
-box-shadow: 3px 3px 10px rgb(188, 188, 188);
 padding: 0px 20px 20px 20px;
 }
 .report-header {
@@ -236,7 +228,6 @@ color: #5500cb;
 .view {
 height: 35px;
 width: 90px;
-border-radius: 8px;
 background-color: #5500cb;
 color: white;
 font-size: 15px;
@@ -280,7 +271,6 @@ width: 100px;
 text-align: center;
 background-color: rgb(0, 177, 0);
 color: white;
-border-radius: 4px;
 
 /* Responsive CSS Here */
 @media screen and (max-width: 950px) {
@@ -313,7 +303,6 @@ border-radius: 4px;
 	.searchbar2 input {
 		width: 250px;
 		height: 42px;
-		border-radius: 50px 0 0 50px;
 		background-color: var(--background-color3);
 		padding: 0 20px;
 		font-size: 15px;

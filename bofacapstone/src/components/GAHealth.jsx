@@ -89,7 +89,7 @@ const GAHealth = ({ userData }) => {
 		<h3> Dashboard</h3>
 	</div>
 
-	<div class="nav-option logout">
+	<div class="nav-option-g logout-g">
 	<a className="logout-button" onClick={handleLogout}>Logout</a>
 	</div>
 

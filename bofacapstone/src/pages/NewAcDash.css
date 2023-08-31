@@ -27,7 +27,7 @@ li {
     --light-orange: #FFE0D3;
 }
 html {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 body.dark {
     --light:#012169 ; /* Change */
